@@ -24,7 +24,8 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 	var cells = grid.get_used_cells()
 	for pos in cells:
 		var cell_type = grid.get_cell_item(pos)
-		
+		var cell_basis =  grid.get_cell_item_basis(pos)
+
 		var tile_name = grid.mesh_library.get_item_name(cell_type)
 		
 		var type = load("res://scenes/gameplay/element/block/" + tile_name + ".tscn")
@@ -35,6 +36,7 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 		var instance: Node3D = type.instantiate()
 		block_map.add_child.call_deferred(instance)
 		instance.position = Vector3(pos) * grid.cell_size + grid.position
+		instance.rotation = cell_basis.get_euler()
 
 	grid.queue_free()
 

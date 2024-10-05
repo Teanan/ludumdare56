@@ -1,6 +1,7 @@
 extends Node
 
-@onready var map: Node3D = $"." # where blocks are spawned
+@onready var block_map: Node3D = $"." # where blocks are spawned
+@onready var creature_map: Node3D = $"." # where creatures are spawned
 
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
@@ -31,7 +32,7 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 			continue
 
 		var instance: Node3D = type.instantiate()
-		map.add_child.call_deferred(instance)
+		block_map.add_child.call_deferred(instance)
 		instance.position = Vector3(pos) * grid.cell_size + grid.position
 
 	grid.queue_free()
@@ -40,3 +41,20 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 # `start()` is called after pre_start and after the graphic transition ends.
 func start():
 	print("gameplay.gd: start() called")
+
+	var creature: Resource = load("res://scenes/creatures/creatures.tscn")
+
+	var creature_instance_classic: Node3D = creature.instantiate()
+	creature_instance_classic.type = creature_instance_classic.CreatureType.CLASSIC
+	creature_map.add_child.call_deferred(creature_instance_classic)
+	creature_instance_classic.position = Vector3(0,0,20)
+
+	var creature_instance_fire: Node3D = creature.instantiate()
+	creature_instance_fire.type = creature_instance_fire.CreatureType.FIRE
+	creature_map.add_child.call_deferred(creature_instance_fire)
+	creature_instance_fire.position = Vector3(10,0,20)	
+
+	var creature_instance_water: Node3D = creature.instantiate()
+	creature_instance_water.type = creature_instance_water.CreatureType.WATER
+	creature_map.add_child.call_deferred(creature_instance_water)
+	creature_instance_water.position = Vector3(20,0,20)

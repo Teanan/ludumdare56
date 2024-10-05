@@ -4,6 +4,8 @@ extends Node
 @onready var creature_map: Node3D = $"Creatures" # where creatures are spawned
 @onready var camera = $"RotatingCamera/Camera"
 
+var level_center: Vector3
+
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
 func pre_start(params):
@@ -17,6 +19,7 @@ func pre_start(params):
 	var level = load("res://scenes/levels/" + params["level_name"] + ".tscn")
 	var level_i: Node3D = level.instantiate()
 	add_child.call_deferred(level_i)
+	level_center = level_i.global_position
 	level_i.connect("tree_entered", _on_level_grid_loaded.bind(level_i))
 
 func _on_level_grid_loaded(level: Node3D) -> void:
@@ -91,9 +94,39 @@ func _physics_process(_delta: float) -> void:
 	elif selected_block != null:
 		selected_block.highlight(false)
 
+
+func find_start_spawn(selected_block: Node3D) -> Vector3:
+	var spawn_pos = level_center.direction_to(selected_block.body.global_position) * 50
+	return spawn_pos
+
+
+func spawn_bottle(selected_block: Node3D) -> void:
+	var bottle: Resource = load("res://scenes/gameplay/element/bottle/bottle.tscn")
+	var bottle_instance: Node3D = bottle.instantiate()
+	creature_map.add_child.call_deferred(bottle_instance)
+	bottle_instance.position = find_start_spawn(selected_block)
+	bottle_instance.targets.append(selected_block)
+	bottle_instance.connect("broken", _on_bottle_break)
+
+
+func spawn_creature_at_pos_with_targets(pos: Vector3, targets: Array[Node3D]) -> void:
+	var creature: Resource = load("res://scenes/creatures/creatures.tscn")
+
+	var creature_instance: Node3D = creature.instantiate()
+	creature_instance.type = creature_instance.CreatureType.WATER
+	creature_map.add_child.call_deferred(creature_instance)
+	creature_instance.position = pos
+	creature_instance.targets = targets
+
+func _on_bottle_break(start_pos: Vector3, targets: Array[Node3D]) -> void:
+	print("spawn at ", start_pos)
+	spawn_creature_at_pos_with_targets(start_pos, targets)
+
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_released() && event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if selected_block != null:
-				for c in creature_map.get_children():
-					c.targets.append(selected_block)
+				spawn_bottle(selected_block)
+				#for c in creature_map.get_children():
+				#	c.targets.append(selected_block)

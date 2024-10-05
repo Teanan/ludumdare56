@@ -2,6 +2,7 @@ extends Node
 
 @onready var block_map: Node3D = $"Blocks" # where blocks are spawned
 @onready var creature_map: Node3D = $"Creatures" # where creatures are spawned
+@onready var camera = $"RotatingCamera/Camera"
 
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
@@ -46,18 +47,54 @@ func start():
 
 	var creature_instance_classic: Node3D = creature.instantiate()
 	creature_instance_classic.type = creature_instance_classic.CreatureType.CLASSIC
-	creature_instance_classic.targets.append(Vector3 (0,0,-20))
 	creature_map.add_child.call_deferred(creature_instance_classic)
 	creature_instance_classic.position = Vector3(0,0,20)
 
 	var creature_instance_fire: Node3D = creature.instantiate()
 	creature_instance_fire.type = creature_instance_fire.CreatureType.FIRE
-	creature_instance_fire.targets.append(Vector3 (20,0,20))
 	creature_map.add_child.call_deferred(creature_instance_fire)
 	creature_instance_fire.position = Vector3(10,0,20)	
 
 	var creature_instance_water: Node3D = creature.instantiate()
 	creature_instance_water.type = creature_instance_water.CreatureType.WATER
-	creature_instance_water.targets.append(Vector3(-20,0,-20))
 	creature_map.add_child.call_deferred(creature_instance_water)
 	creature_instance_water.position = Vector3(20,0,20)
+	
+var selected_block: Node3D = null
+
+func _physics_process(delta: float) -> void:
+	if not camera:
+		return
+
+	var viewport = get_viewport()
+	var m_pos = viewport.get_mouse_position()
+	var ray_start = camera.project_ray_origin(m_pos)
+	var ray_end = ray_start + camera.project_ray_normal(m_pos) * 1000
+	var world3d : World3D = viewport.world_3d
+	var space_state = world3d.direct_space_state
+	
+	if space_state == null:
+		return
+	
+	var query = PhysicsRayQueryParameters3D.create(ray_start, ray_end)#, collision_mask)
+	query.collide_with_areas = true
+	
+	var intersect = space_state.intersect_ray(query)
+	if "collider" in intersect and intersect["collider"].is_in_group("targetable"):
+		var block_node = intersect["collider"].get_parent()
+		if selected_block != block_node:
+			if selected_block != null:
+				selected_block.highlight(false)
+			selected_block = block_node
+			selected_block.highlight(true)
+	elif selected_block != null:
+		selected_block.highlight(false)
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.is_released() && event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
+			if selected_block != null:
+				for c in creature_map.get_children():
+					c.targets.append(selected_block.position)
+					c.targets.append(selected_block.position)
+					c.targets.append(selected_block.position)

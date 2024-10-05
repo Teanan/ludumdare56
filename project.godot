@@ -43,6 +43,10 @@ project/assembly_name="godot-game-template"
 
 enabled=PackedStringArray("res://addons/ggt-core/plugin.cfg", "res://addons/ggt-debug-shortcuts/plugin.cfg")
 
+[global_group]
+
+targetable=""
+
 [gui]
 
 theme/custom="res://resources/theme/theme-main.tres"

@@ -3,12 +3,18 @@ extends Control
 @onready var btn_play = $MarginContainer/Control/VBoxContainer/PlayButton
 @onready var btn_exit = $MarginContainer/Control/VBoxContainer/ExitButton
 
+# Set to true to avoid clicking on play every time
+const AUTOPLAY = false
 
 func _ready():
 	# needed for gamepads to work
 	btn_play.grab_focus()
 	if OS.has_feature('web'):
 		btn_exit.queue_free() # exit button dosn't make sense on HTML5
+	if OS.is_debug_build():
+		OS.open_midi_inputs()
+        if AUTOPLAY:
+            _on_PlayButton_pressed()
 
 
 func _on_PlayButton_pressed() -> void:

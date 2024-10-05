@@ -1,8 +1,8 @@
 extends Marker3D
 
-var distance : float = 15.0
-var height : float = 10.0
-var zoom : float = 1.0
+var distance : float = 150.0
+var height : float = 100.0
+var zoom : float = 0.1
 @onready var camera = %Camera
 
 var angle_rad: float = 0
@@ -43,7 +43,7 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	#zoom += 5 * delta
-	zoom = clampf(zoom, 1.0, 5.0)
+	zoom = clampf(zoom, 0.1, 5.0)
 	height = 20 / zoom - 3
 	distance = 30 / zoom
 	camera.position.y = lerpf(camera.position.y, height, delta * camera_speed)

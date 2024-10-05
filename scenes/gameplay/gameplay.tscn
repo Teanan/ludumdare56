@@ -1,14 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://4fyoq8npekf0"]
+[gd_scene load_steps=8 format=3 uid="uid://4fyoq8npekf0"]
 
-[ext_resource type="Texture2D" uid="uid://dtwpm3uclaspj" path="res://assets/sprites/icon.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://barl4q1kugrmm" path="res://scenes/gameplay/pause-layer/pause-layer.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cda4kuh8b7mik" path="res://scenes/gameplay/rotating_camera.tscn" id="3_hxalf"]
 [ext_resource type="Script" path="res://scenes/gameplay/gameplay.gd" id="5"]
 
-[node name="Gameplay" type="Node"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nhfna"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w61b2"]
+energy_multiplier = 1.5
+
+[sub_resource type="Sky" id="Sky_semw7"]
+sky_material = SubResource("ProceduralSkyMaterial_w61b2")
+
+[sub_resource type="Environment" id="Environment_iixy5"]
+background_mode = 2
+sky = SubResource("Sky_semw7")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Gameplay" type="Node3D"]
 script = ExtResource("5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(523.993, 298.508)
-texture = ExtResource("1")
-
 [node name="PauseLayer" parent="." instance=ExtResource("2")]
+
+[node name="RotatingCamera" parent="." instance=ExtResource("3_hxalf")]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_nhfna")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5304, 0)
+light_energy = 2.0
+light_size = 500.0
+omni_range = 500.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iixy5")

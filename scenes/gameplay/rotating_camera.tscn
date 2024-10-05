@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://xerkn3uqpacp"]
+[gd_scene load_steps=2 format=3 uid="uid://cda4kuh8b7mik"]
 
 [ext_resource type="Script" path="res://scenes/gameplay/rotating_camera.gd" id="1_pyh3j"]
 

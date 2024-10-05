@@ -21,6 +21,7 @@ func _on_PlayButton_pressed() -> void:
 			"name": "test",
 			"val": 15
 		},
+		"level_name": "Test1"
 	}
 	Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)
 

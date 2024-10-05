@@ -1,8 +1,6 @@
 extends Node
 
-var elapsed = 0
-
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var map: Node3D = $"." # where blocks are spawned
 
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
@@ -13,15 +11,32 @@ func pre_start(params):
 		for key in params:
 			var val = params[key]
 			printt("", key, val)
-	sprite_2d.position = Game.size / 2
+
+	var level = load("res://scenes/levels/" + params["level_name"] + ".tscn")
+	var level_i: Node3D = level.instantiate()
+	add_child.call_deferred(level_i)
+	level_i.connect("tree_entered", _on_level_grid_loaded.bind(level_i))
+
+func _on_level_grid_loaded(level: Node3D) -> void:
+	var grid = level.get_node("GridMap")
+	var cells = grid.get_used_cells()
+	for pos in cells:
+		var cell_type = grid.get_cell_item(pos)
+		
+		var name = grid.mesh_library.get_item_name(cell_type)
+		
+		var type = load("res://scenes/gameplay/element/block/" + name + ".tscn")
+		if type == null:
+			push_error("invalid tile name \"" + name + "\"")
+			continue
+
+		var instance: Node3D = type.instantiate()
+		map.add_child.call_deferred(instance)
+		instance.position = Vector3(pos) * grid.cell_size + grid.position
+
+	grid.queue_free()
 
 
 # `start()` is called after pre_start and after the graphic transition ends.
 func start():
 	print("gameplay.gd: start() called")
-
-
-func _process(delta):
-	elapsed += delta
-	sprite_2d.position.x = Game.size.x / 2 + 150 * sin(2 * 0.4 * PI * elapsed)
-	sprite_2d.position.y = Game.size.y / 2 + 100 * sin(2 * 0.2 * PI * elapsed)

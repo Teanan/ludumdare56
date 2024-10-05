@@ -8,10 +8,10 @@ enum CreatureType {
 
 @export var type: CreatureType = CreatureType.CLASSIC
 @export var speed: float = 2.0
-@export var targets: Array[Vector3]
+@export var targets: Array[Node3D]
 
 var current_target_selected: bool = false
-var current_target: Vector3
+var current_target: Node3D
 
 func _ready() -> void:
 	var local_dust_mesh: SphereMesh = $dust.mesh.duplicate()
@@ -38,8 +38,8 @@ func _process(delta: float) -> void:
 			current_target_selected = true
 
 	if current_target_selected:
-		if position.distance_to(current_target) > 1.0:
-			position = position.move_toward(current_target, delta*speed)
+		if position.distance_to(current_target.body.global_position) > 1.0:
+			position = position.move_toward(current_target.body.global_position, delta*speed)
 		else:
 			current_target_selected = false
 			print("done")

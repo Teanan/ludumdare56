@@ -53,16 +53,17 @@ func start():
 	var creature_instance_fire: Node3D = creature.instantiate()
 	creature_instance_fire.type = creature_instance_fire.CreatureType.FIRE
 	creature_map.add_child.call_deferred(creature_instance_fire)
-	creature_instance_fire.position = Vector3(10,0,20)	
+	creature_instance_fire.position = Vector3(10,0,20)
 
 	var creature_instance_water: Node3D = creature.instantiate()
 	creature_instance_water.type = creature_instance_water.CreatureType.WATER
 	creature_map.add_child.call_deferred(creature_instance_water)
 	creature_instance_water.position = Vector3(20,0,20)
-	
+
+
 var selected_block: Node3D = null
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not camera:
 		return
 
@@ -95,6 +96,4 @@ func _input(event):
 		if event.is_released() && event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if selected_block != null:
 				for c in creature_map.get_children():
-					c.targets.append(selected_block.position)
-					c.targets.append(selected_block.position)
-					c.targets.append(selected_block.position)
+					c.targets.append(selected_block)

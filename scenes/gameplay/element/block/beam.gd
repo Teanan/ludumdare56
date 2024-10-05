@@ -7,10 +7,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 @onready var mesh: MeshInstance3D = $"RigidBody3D/Beam"
+@onready var body: RigidBody3D = $"RigidBody3D"
 
 func highlight(selected: bool) -> void:
 	if selected:

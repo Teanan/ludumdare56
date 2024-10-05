@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3ku5mrchm8lk"]
+
+[ext_resource type="Script" path="res://scenes/creatures/creatures.gd" id="1_vmx8y"]
+[ext_resource type="ArrayMesh" uid="uid://l2mqof5gxgq" path="res://assets/models/creature/single.obj" id="2_xvyvu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrpvw"]
+albedo_color = Color(0.823529, 0.823529, 0.823529, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_l3a71"]
+material = SubResource("StandardMaterial3D_lrpvw")
+radial_segments = 32
+rings = 16
+
+[node name="creatures" type="Node3D"]
+script = ExtResource("1_vmx8y")
+
+[node name="dust" type="CPUParticles3D" parent="."]
+amount = 16
+lifetime_randomness = 0.1
+mesh = SubResource("SphereMesh_l3a71")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+
+[node name="creature_spawn" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+lifetime = 1.5
+randomness = 1.0
+mesh = ExtResource("2_xvyvu")
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 5.0
+initial_velocity_max = 6.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+radial_accel_min = -5.0
+radial_accel_max = 5.0
+tangential_accel_min = -5.0
+tangential_accel_max = 5.0
+damping_max = 5.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.08
+scale_amount_max = 0.12

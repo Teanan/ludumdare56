@@ -46,15 +46,18 @@ func start():
 
 	var creature_instance_classic: Node3D = creature.instantiate()
 	creature_instance_classic.type = creature_instance_classic.CreatureType.CLASSIC
+	creature_instance_classic.targets.append(Vector3 (0,0,-20))
 	creature_map.add_child.call_deferred(creature_instance_classic)
 	creature_instance_classic.position = Vector3(0,0,20)
 
 	var creature_instance_fire: Node3D = creature.instantiate()
 	creature_instance_fire.type = creature_instance_fire.CreatureType.FIRE
+	creature_instance_fire.targets.append(Vector3 (20,0,20))
 	creature_map.add_child.call_deferred(creature_instance_fire)
 	creature_instance_fire.position = Vector3(10,0,20)	
 
 	var creature_instance_water: Node3D = creature.instantiate()
 	creature_instance_water.type = creature_instance_water.CreatureType.WATER
+	creature_instance_water.targets.append(Vector3(-20,0,-20))
 	creature_map.add_child.call_deferred(creature_instance_water)
 	creature_instance_water.position = Vector3(20,0,20)

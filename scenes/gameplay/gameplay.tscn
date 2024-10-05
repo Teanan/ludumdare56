@@ -1,10 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://4fyoq8npekf0"]
+[gd_scene load_steps=10 format=3 uid="uid://4fyoq8npekf0"]
 
 [ext_resource type="PackedScene" uid="uid://barl4q1kugrmm" path="res://scenes/gameplay/pause-layer/pause-layer.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cda4kuh8b7mik" path="res://scenes/gameplay/rotating_camera.tscn" id="3_hxalf"]
 [ext_resource type="Script" path="res://scenes/gameplay/gameplay.gd" id="5"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f6qtl"]
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nhfna"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yhuua"]
+top_radius = 100.0
+bottom_radius = 100.0
+height = 1.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w61b2"]
 energy_multiplier = 1.5
@@ -25,17 +32,30 @@ script = ExtResource("5")
 
 [node name="RotatingCamera" parent="." instance=ExtResource("3_hxalf")]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="RotatingCamera"]
+transform = Transform3D(1, -3.71723e-05, 0.000155715, -5.21038e-05, 0.844104, 0.53618, -0.000151375, -0.53618, 0.844104, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
+
 [node name="Ground" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_f6qtl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_nhfna")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5304, 0)
-light_energy = 2.0
-light_size = 500.0
-omni_range = 500.0
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_yhuua")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.822312, -0.0466655, 0.56712, 2.42937e-05, 0.996635, 0.081973, -0.569036, -0.0673936, 0.819546, 47.1038, 55.1131, 8.63086)
+light_energy = 0.5
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_split_1 = 1.0
+directional_shadow_max_distance = 1000.0
+sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iixy5")

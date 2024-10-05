@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dolq1ae0xl6qf"]
+
+[ext_resource type="ArrayMesh" uid="uid://csmqhlgoba4ph" path="res://assets/models/block/slope.obj" id="1_2e0pp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_644en"]
+points = PackedVector3Array(8, -4, 4, 8, -4, -4, -8, 4, 4, -8, 4, -4, -8, -4, 4, -8, -4, -4)
+
+[node name="Basic" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_644en")
+
+[node name="Basic" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = ExtResource("1_2e0pp")
+skeleton = NodePath("../..")

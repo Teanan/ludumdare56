@@ -118,9 +118,10 @@ func spawn_creature_at_pos_with_targets(pos: Vector3, targets: Array[Node3D]) ->
 	creature_instance.position = pos
 	creature_instance.targets = targets
 
-func _on_bottle_break(start_pos: Vector3, targets: Array[Node3D]) -> void:
-	print("spawn at ", start_pos)
-	spawn_creature_at_pos_with_targets(start_pos, targets)
+
+func _on_bottle_break(pos: Vector3, targets: Array[Node3D]) -> void:
+	print("spawn at ", pos)
+	spawn_creature_at_pos_with_targets(pos, targets)
 
 
 func _input(event):

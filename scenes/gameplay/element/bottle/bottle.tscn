@@ -16,26 +16,24 @@ albedo_color = Color(0.50464, 0.481599, 0.943592, 1)
 material = SubResource("StandardMaterial3D_mqlbs")
 radial_segments = 32
 
-[node name="Bottle" type="Node3D"]
+[node name="Bottle" type="RigidBody3D"]
 script = ExtResource("1_n7jku")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="RigidBody3D"]
 mesh = ExtResource("1_vafil")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 shape = SubResource("BoxShape3D_e33df")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_vmaum")
 
-[node name="WaterParticles" type="CPUParticles3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+[node name="WaterParticles" type="CPUParticles3D" parent="."]
 emitting = false
 amount = 32
 one_shot = true
@@ -47,5 +45,5 @@ initial_velocity_max = 25.0
 angle_min = -146.4
 angle_max = 207.5
 
-[connection signal="body_entered" from="RigidBody3D/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="finished" from="RigidBody3D/WaterParticles" to="." method="_on_water_particles_finished"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="finished" from="WaterParticles" to="." method="_on_water_particles_finished"]

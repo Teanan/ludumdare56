@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bteuboje5e2ux"]
+
+[ext_resource type="PackedScene" uid="uid://c2dngy4sqp5dr" path="res://scenes/gameplay/element/block/GreekPillar.tscn" id="1_7ix81"]
+[ext_resource type="PackedScene" uid="uid://ce5dfxa44yrep" path="res://scenes/gameplay/element/block/HalfSlab.tscn" id="3_jfoxu"]
+[ext_resource type="PackedScene" uid="uid://r0koobcdmodo" path="res://scenes/gameplay/element/block/SmallSlope.tscn" id="3_opia0"]
+[ext_resource type="PackedScene" uid="uid://c2obli0x52fg7" path="res://scenes/gameplay/element/block/Box.tscn" id="4_uj0r2"]
+
+[node name="AllBlocksForMeshlibrary" type="Node3D"]
+
+[node name="0_GreekPillar" parent="." instance=ExtResource("1_7ix81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.468139, 0, 2.30455)
+
+[node name="1_SmallSlope" parent="." instance=ExtResource("3_opia0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03771, 0, 1.83357)
+
+[node name="2_HalfSlab" parent="." instance=ExtResource("3_jfoxu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6176, -0.736861, 1.54158)
+
+[node name="3_Box" parent="." instance=ExtResource("4_uj0r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9558, 0, 2.07491)

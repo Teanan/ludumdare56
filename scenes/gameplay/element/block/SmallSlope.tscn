@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://r0koobcdmodo"]
+
+[ext_resource type="ArrayMesh" uid="uid://c3hi3rnxev058" path="res://assets/models/block/models/small_slope.obj" id="1_eeboy"]
+[ext_resource type="Script" path="res://scenes/gameplay/element/block/center_of_mass.gd" id="1_u5sdo"]
+[ext_resource type="Material" uid="uid://b3l3s4oxbecqk" path="res://assets/models/block/materials/brick_material.tres" id="2_7f6yc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_swr0r"]
+points = PackedVector3Array(-0.5, 1, 0.5, 1.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 0, 0.5, 1.5, 0, -0.5, -0.5, 0, -0.5)
+
+[node name="SmallSlope" type="RigidBody3D"]
+mass = 60.0
+script = ExtResource("1_u5sdo")
+
+[node name="SmallSlope" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh = ExtResource("1_eeboy")
+surface_material_override/0 = ExtResource("2_7f6yc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_swr0r")
+
+[node name="CenterOfMass" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42929, 0)

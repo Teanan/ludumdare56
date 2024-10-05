@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2dngy4sqp5dr"]
+
+[ext_resource type="Script" path="res://scenes/gameplay/element/block/center_of_mass.gd" id="1_44mta"]
+[ext_resource type="ArrayMesh" uid="uid://d3qncuju8uuw" path="res://assets/models/block/models/greek_pillar.obj" id="1_h6wmq"]
+[ext_resource type="Material" uid="uid://cg8u317u7qjnu" path="res://assets/models/block/materials/marble_material.tres" id="2_cvu31"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6ayvl"]
+points = PackedVector3Array(-0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 3, -0.5, 0.5, 0, 0.5, 0.5, 3, -0.5, -0.5, 3, 0.5, 0.5, 3, 0.5)
+
+[node name="GreekPillar" type="RigidBody3D"]
+mass = 200.0
+center_of_mass_mode = 1
+script = ExtResource("1_44mta")
+
+[node name="GreekPillar" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh = ExtResource("1_h6wmq")
+surface_material_override/0 = ExtResource("2_cvu31")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_6ayvl")
+
+[node name="CenterOfMass" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9514, 0)

@@ -23,11 +23,11 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 	for pos in cells:
 		var cell_type = grid.get_cell_item(pos)
 		
-		var name = grid.mesh_library.get_item_name(cell_type)
+		var tile_name = grid.mesh_library.get_item_name(cell_type)
 		
-		var type = load("res://scenes/gameplay/element/block/" + name + ".tscn")
+		var type = load("res://scenes/gameplay/element/block/" + tile_name + ".tscn")
 		if type == null:
-			push_error("invalid tile name \"" + name + "\"")
+			push_error("invalid tile name \"" + tile_name + "\"")
 			continue
 
 		var instance: Node3D = type.instantiate()

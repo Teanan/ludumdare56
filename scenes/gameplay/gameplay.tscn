@@ -59,3 +59,7 @@ sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iixy5")
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Creatures" type="Node3D" parent="."]

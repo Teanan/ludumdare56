@@ -1,7 +1,7 @@
 extends Node
 
-@onready var block_map: Node3D = $"." # where blocks are spawned
-@onready var creature_map: Node3D = $"." # where creatures are spawned
+@onready var block_map: Node3D = $"Blocks" # where blocks are spawned
+@onready var creature_map: Node3D = $"Creatures" # where creatures are spawned
 
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.

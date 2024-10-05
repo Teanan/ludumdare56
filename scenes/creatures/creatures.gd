@@ -10,8 +10,18 @@ enum CreatureType {
 @export var speed: float = 5.0
 @export var targets: Array[Node3D]
 
+enum CreatureState {
+	LOOKING_FOR_SNACK,
+	ESCAPING,
+	IDLING
+}
+
+var state: CreatureState = CreatureState.IDLING
+
 var current_target_selected: bool = false
 var current_target: Node3D
+
+var escape_pos: Vector3
 
 func _ready() -> void:
 	var local_dust_mesh: SphereMesh = $dust.mesh.duplicate()
@@ -27,9 +37,11 @@ func _ready() -> void:
 
 	local_dust_mesh.material = local_dust_mat
 	$dust.mesh = local_dust_mesh
+	escape_pos = global_position
+	state = CreatureState.LOOKING_FOR_SNACK
 
 
-func _process(delta: float) -> void:
+func look_4_snack(delta: float) -> void:
 	if current_target_selected == false:
 		if targets.is_empty():
 			pass
@@ -40,6 +52,7 @@ func _process(delta: float) -> void:
 	if current_target == null:
 		# target destroy before we arrived
 		current_target_selected = false
+		state = CreatureState.IDLING
 
 	if current_target_selected:
 		if position.distance_to(current_target.body.global_position) > 1.0:
@@ -47,5 +60,20 @@ func _process(delta: float) -> void:
 		else:
 			current_target.start_snacking()
 			current_target_selected = false
-			print("done")
-	
+			state = CreatureState.ESCAPING
+
+func escape(delta: float) -> void:
+	if position.distance_to(escape_pos) > 1.0:
+		position = position.move_toward(escape_pos, delta*speed)
+	else:
+		print("escaped")
+		self.queue_free()
+
+func _process(delta: float) -> void:
+	match state:
+		CreatureState.LOOKING_FOR_SNACK:
+			look_4_snack(delta)
+		CreatureState.ESCAPING:
+			escape(delta)
+		CreatureState.IDLING:
+			pass

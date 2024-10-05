@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bnnle6t24skhr"
+path="res://.godot/imported/half_slab.obj-f794b3e4ef3b7ecffd4bfcf08484ec3e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/half_slab.obj-f794b3e4ef3b7ecffd4bfcf08484ec3e.mesh"]
+
+source_file="res://assets/models/block/models/half_slab.obj"
+dest_files=["res://.godot/imported/half_slab.obj-f794b3e4ef3b7ecffd4bfcf08484ec3e.mesh", "res://.godot/imported/half_slab.obj-f794b3e4ef3b7ecffd4bfcf08484ec3e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

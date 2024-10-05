@@ -42,6 +42,7 @@ func _input(event):
 		camera_velocity += event.relative / 1000.0
 
 func _process(delta: float) -> void:
+	camera.look_at(self.position)
 	#zoom += 5 * delta
 	zoom = clampf(zoom, 0.1, 5.0)
 	height = 20 / zoom - 3

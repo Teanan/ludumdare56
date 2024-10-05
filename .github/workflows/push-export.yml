@@ -126,38 +126,3 @@ jobs:
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
           PACKAGE: itch.zip
-
-  export-mac:
-    if: false # currently broken, see https://github.com/crystal-bit/godot-game-template/issues/82
-    name: Mac Export
-    runs-on: ubuntu-20.04
-    container:
-      image: barichello/godot-ci:4.2.1
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
-          mv -v /root/.local/share/godot/templates/* ~/.local/share/godot/export_templates/
-      - name: Mac Build
-        run: |
-          mkdir -v -p builds/mac
-          godot --headless -v --export-release "macOS" ./builds/mac/$EXPORT_NAME.zip
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: mac
-          path: builds/mac
-          retention-days: 1
-      - name: Zip Folder
-        run: zip -r itch.zip builds/mac
-      - name: Deploy to itch.io
-        if: ${{ env.ITCH_IO=='true' }}
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: mac
-          ITCH_GAME: ${{ secrets.ITCH_GAME }}
-          ITCH_USER: ${{ secrets.ITCH_USER }}
-          PACKAGE: itch.zip

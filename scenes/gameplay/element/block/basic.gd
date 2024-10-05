@@ -18,3 +18,12 @@ func highlight(selected: bool) -> void:
 		mesh.scale = Vector3(1.1, 1.1, 1.1)
 	else:
 		mesh.scale = Vector3(1, 1, 1)
+
+func start_snacking() -> void:
+	$SnackingTimer.start()
+	$SnackingParticles.visible = true
+	$RigidBody3D.apply_impulse(Vector3(0, 0, 0))
+
+func _on_snaking_timer_timeout() -> void:
+	$RigidBody3D.apply_impulse(Vector3(0, 0, 0))
+	queue_free()

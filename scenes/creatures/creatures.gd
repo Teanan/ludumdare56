@@ -7,7 +7,7 @@ enum CreatureType {
 }
 
 @export var type: CreatureType = CreatureType.CLASSIC
-@export var speed: float = 2.0
+@export var speed: float = 5.0
 @export var targets: Array[Node3D]
 
 var current_target_selected: bool = false
@@ -36,11 +36,16 @@ func _process(delta: float) -> void:
 		else:
 			current_target = targets.pop_front()
 			current_target_selected = true
+			
+	if current_target == null:
+		# target destroy before we arrived
+		current_target_selected = false
 
 	if current_target_selected:
 		if position.distance_to(current_target.body.global_position) > 1.0:
 			position = position.move_toward(current_target.body.global_position, delta*speed)
 		else:
+			current_target.start_snacking()
 			current_target_selected = false
 			print("done")
 	

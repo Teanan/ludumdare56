@@ -77,17 +77,17 @@ func _physics_process(_delta: float) -> void:
 		selected_block.highlight(false)
 
 
-func find_start_spawn(selected_block: Node3D) -> Vector3:
-	var spawn_pos = level_center.direction_to(selected_block.body.global_position) * 50
+func find_start_spawn(local_selected_block: Node3D) -> Vector3:
+	var spawn_pos = level_center.direction_to(local_selected_block.body.global_position) * 50
 	return spawn_pos
 
 
-func spawn_bottle(type: CreatureEnum.CreatureType, selected_block: Node3D) -> void:
+func spawn_bottle(type: CreatureEnum.CreatureType, local_selected_block: Node3D) -> void:
 	var bottle: Resource = load("res://scenes/gameplay/element/bottle/bottle.tscn")
 	var bottle_instance: Node3D = bottle.instantiate()
 	bottle_instance.position = find_start_spawn(selected_block)
 	bottle_instance.type = type
-	bottle_instance.targets.append(selected_block)
+	bottle_instance.targets.append(local_selected_block)
 	bottle_instance.connect("broken", _on_bottle_break)
 	creature_map.add_child.call_deferred(bottle_instance)
 
@@ -114,4 +114,4 @@ func _input(event):
 		if event.is_released() && event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if selected_block != null:
 				spawn_bottle(current_type, selected_block)
-				current_type = (current_type + 1) % CreatureEnum.CreatureType.size()
+				current_type = ((current_type + 1) % CreatureEnum.CreatureType.size()) as CreatureEnum.CreatureType

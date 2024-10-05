@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://b47ugor7yh33a"]
+
+[ext_resource type="Script" path="res://scenes/gameplay/element/bottle/bottle.gd" id="1_n7jku"]
+[ext_resource type="ArrayMesh" uid="uid://dg6odpm3dq6s5" path="res://assets/models/creature/bottle.obj" id="1_vafil"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e33df"]
+size = Vector3(3, 8, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmaum"]
+size = Vector3(4, 9, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqlbs"]
+albedo_color = Color(0.50464, 0.481599, 0.943592, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_shg3n"]
+material = SubResource("StandardMaterial3D_mqlbs")
+radial_segments = 32
+
+[node name="Bottle" type="RigidBody3D"]
+script = ExtResource("1_n7jku")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = ExtResource("1_vafil")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_e33df")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_vmaum")
+
+[node name="WaterParticles" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 32
+one_shot = true
+mesh = SubResource("CapsuleMesh_shg3n")
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+angle_min = -146.4
+angle_max = 207.5
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="finished" from="WaterParticles" to="." method="_on_water_particles_finished"]

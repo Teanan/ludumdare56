@@ -18,11 +18,7 @@ func _ready():
 
 
 func _on_PlayButton_pressed() -> void:
-	var params = {
-		"show_progress_bar": true,
-		"level_name": "Test1"
-	}
-	Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)
+	Game.change_scene_to_file("res://scenes/menu/levels.tscn")
 
 
 func _on_ExitButton_pressed() -> void:

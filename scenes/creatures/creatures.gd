@@ -1,46 +1,67 @@
 extends Node3D
 
-enum CreatureType {
-	CLASSIC,
-	FIRE,
-	WATER
-}
-
-@export var type: CreatureType = CreatureType.CLASSIC
-@export var speed: float = 2.0
+@export var type: CreatureEnum.CreatureType = CreatureEnum.CreatureType.CLASSIC
+@export var speed: float = 5.0
 @export var targets: Array[Node3D]
+
+var state: CreatureEnum.CreatureState = CreatureEnum.CreatureState.IDLING
 
 var current_target_selected: bool = false
 var current_target: Node3D
+
+var escape_pos: Vector3
 
 func _ready() -> void:
 	var local_dust_mesh: SphereMesh = $dust.mesh.duplicate()
 	var local_dust_mat: StandardMaterial3D = local_dust_mesh.material.duplicate()
 
 	match type:
-		CreatureType.CLASSIC:
+		CreatureEnum.CreatureType.CLASSIC:
 			local_dust_mat.albedo_color = Color("#d2d2d2")
-		CreatureType.FIRE:
+		CreatureEnum.CreatureType.FIRE:
 			local_dust_mat.albedo_color = Color("#f6682e")
-		CreatureType.WATER:
+		CreatureEnum.CreatureType.WATER:
 			local_dust_mat.albedo_color = Color("#6290db")
 
 	local_dust_mesh.material = local_dust_mat
 	$dust.mesh = local_dust_mesh
+	escape_pos = global_position
+	state = CreatureEnum.CreatureState.LOOKING_FOR_SNACK
 
 
-func _process(delta: float) -> void:
+func look_4_snack(delta: float) -> void:
 	if current_target_selected == false:
 		if targets.is_empty():
 			pass
 		else:
 			current_target = targets.pop_front()
 			current_target_selected = true
+			
+	if current_target == null:
+		# target destroy before we arrived
+		current_target_selected = false
+		state = CreatureEnum.CreatureState.IDLING
 
 	if current_target_selected:
 		if position.distance_to(current_target.body.global_position) > 1.0:
 			position = position.move_toward(current_target.body.global_position, delta*speed)
 		else:
+			current_target.start_snacking()
 			current_target_selected = false
-			print("done")
-	
+			state = CreatureEnum.CreatureState.ESCAPING
+
+func escape(delta: float) -> void:
+	if position.distance_to(escape_pos) > 1.0:
+		position = position.move_toward(escape_pos, delta*speed)
+	else:
+		print("escaped")
+		self.queue_free()
+
+func _process(delta: float) -> void:
+	match state:
+		CreatureEnum.CreatureState.LOOKING_FOR_SNACK:
+			look_4_snack(delta)
+		CreatureEnum.CreatureState.ESCAPING:
+			escape(delta)
+		CreatureEnum.CreatureState.IDLING:
+			pass

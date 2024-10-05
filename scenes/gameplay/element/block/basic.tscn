@@ -19,3 +19,23 @@ shape = SubResource("BoxShape3D_7lj7d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0324365, 0, -0.0190444)
 mesh = ExtResource("1_hsgik")
 skeleton = NodePath("../..")
+
+[node name="SnackingParticles" type="CPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, 1, 4.37114e-08, -8.74228e-08, -8.74228e-08, -3.82137e-15, -1, 0, 0, 0)
+visible = false
+amount = 96
+lifetime_randomness = 0.11
+mesh = ExtResource("1_hsgik")
+emission_shape = 1
+emission_sphere_radius = 8.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+radial_accel_max = 2.0
+damping_max = 4.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+
+[node name="SnackingTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="SnackingTimer" to="." method="_on_snaking_timer_timeout"]

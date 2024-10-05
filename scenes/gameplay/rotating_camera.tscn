@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://xerkn3uqpacp"]
+
+[ext_resource type="Script" path="res://scenes/gameplay/rotating_camera.gd" id="1_pyh3j"]
+
+[node name="RotatingCamera" type="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31706, 6.06304, -0.513738)
+script = ExtResource("1_pyh3j")
+
+[node name="Camera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+v_offset = -2.285

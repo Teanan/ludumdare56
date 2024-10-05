@@ -1,7 +1,8 @@
 extends Node3D
 
-signal broken(start_pos: Vector3, targets: Array[Node3D])
+signal broken(start_pos: Vector3, type: CreatureEnum.CreatureType, targets: Array[Node3D])
 
+var type: CreatureEnum.CreatureType
 var targets: Array[Node3D]
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +20,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Ground":
 		$WaterParticles.emitting = true
 		$Mesh.visible = false
-		broken.emit(global_position,targets)
+		broken.emit(global_position, type, targets)
 
 
 func _on_water_particles_finished() -> void:

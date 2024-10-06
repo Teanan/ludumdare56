@@ -1,6 +1,9 @@
-[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bo7svsw4wjc0k"]
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://bo7svsw4wjc0k"]
 
-[ext_resource type="Texture2D" uid="uid://1eo3vnwebdt3" path="res://assets/models/block/Textures/seamless_grass.png" id="1_bxqmq"]
+[ext_resource type="Texture2D" uid="uid://b1h2dcxuq3von" path="res://assets/models/block/Textures/grass02.jpg" id="1_d5uib"]
+[ext_resource type="Texture2D" uid="uid://dh0nhqwritjw4" path="res://assets/models/block/Textures/grass02_s.jpg" id="2_it5xq"]
+[ext_resource type="Texture2D" uid="uid://bk02i0q7nolwn" path="res://assets/models/block/Textures/grass02_h.jpg" id="3_giwim"]
+[ext_resource type="Texture2D" uid="uid://b2re0tcw5oc73" path="res://assets/models/block/Textures/grass02_n.jpg" id="4_vkht6"]
 
 [sub_resource type="Gradient" id="Gradient_4c0to"]
 
@@ -8,13 +11,21 @@
 gradient = SubResource("Gradient_4c0to")
 
 [resource]
-albedo_texture = ExtResource("1_bxqmq")
+albedo_color = Color(0.812349, 0.832816, 0.715186, 1)
+albedo_texture = ExtResource("1_d5uib")
+metallic = 1.0
+metallic_texture = ExtResource("2_it5xq")
 emission = Color(0.580023, 0.367299, 2.88785e-07, 1)
 emission_energy_multiplier = 1.92
 emission_on_uv2 = true
 emission_texture = SubResource("GradientTexture1D_xhv07")
+normal_enabled = true
+normal_texture = ExtResource("4_vkht6")
 rim_tint = 1.0
-uv1_triplanar = true
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_giwim")
+uv1_scale = Vector3(7.5, 7.5, 7.5)
 texture_filter = 0
 grow_amount = 6.8
 proximity_fade_distance = 0.01

@@ -6,6 +6,8 @@ extends Node
 
 var level_center: Vector3
 
+var mechant_ref: RigidBody3D
+
 var rng = RandomNumberGenerator.new()
 
 # `pre_start()` is called when a scene is loaded.
@@ -44,6 +46,10 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 	level_center = level.global_position
 	level_center.y = 0.0
 	grid.queue_free()
+	
+	mechant_ref = level.get_node("LeMechant")
+	if mechant_ref != null:
+		mechant_ref.connect("tree_existed", _on_mechant_death)
 
 
 # `start()` is called after pre_start and after the graphic transition ends.
@@ -118,6 +124,14 @@ func _on_bottle_break(pos: Vector3, type: CreatureEnum.CreatureType, targets: Ar
 	print("spawn at ", pos)
 	spawn_creature_at_pos_with_targets(pos, type, targets)
 
+func wakeup():
+	for block in block_map.get_children():
+		var body: RigidBody3D = block
+		body.sleeping = false
+		body.apply_impulse(Vector3(0, 0, 0))
+	if mechant_ref != null:
+		mechant_ref.sleeping = false
+		mechant_ref.apply_impulse(Vector3(0, 0, 0))
 
 var current_type: CreatureEnum.CreatureType = CreatureEnum.CreatureType.None
 
@@ -131,4 +145,7 @@ func _input(event):
 
 func _on_shop_layer_creature_selected(type: CreatureEnum.CreatureType) -> void:
 	current_type = type
+	
+func _on_mechant_death() -> void:
+	wakeup()
 	

@@ -14,3 +14,17 @@ extends RigidBody3D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	$DeathParticles.visible = true
+
+	var free_timer = Timer.new()
+	free_timer.set_wait_time(2) # 5 seconds wait time
+	free_timer.set_one_shot(true)
+	add_child(free_timer)
+	free_timer.start()
+	free_timer.connect("timeout", queue_free)
+	#var tween = create_tween()
+	#tween.tween_property($MeshInstance3D.mesh.surface_get_material(0), "modulate:a", 0, 5.0)
+	#tween.tween_property($MeshInstance3D2.mesh.surface_get_material(0), "modulate:a", 0, 5.0)

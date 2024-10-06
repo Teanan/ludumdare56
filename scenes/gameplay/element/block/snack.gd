@@ -16,3 +16,6 @@ func _on_snacking_timer_timeout() -> void:
 	get_parent().sleeping = false
 	get_parent().apply_impulse(Vector3(0, 0, 0))
 	get_parent().queue_free()
+	
+	var gameplay = get_parent().get_parent().get_parent() # sorry
+	gameplay.wakeup()

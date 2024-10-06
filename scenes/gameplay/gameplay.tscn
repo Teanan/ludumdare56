@@ -43,6 +43,7 @@ light_energy = 0.1
 shadow_enabled = true
 
 [node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_f6qtl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]

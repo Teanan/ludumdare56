@@ -6,6 +6,7 @@ extends Node
 
 var level_center: Vector3
 
+var gentil_ref: RigidBody3D
 var mechant_ref: RigidBody3D
 
 var rng = RandomNumberGenerator.new()
@@ -46,7 +47,11 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 	level_center = level.global_position
 	level_center.y = 0.0
 	grid.queue_free()
-	
+
+	gentil_ref = level.get_node("LeGentil")
+	if gentil_ref != null:
+		gentil_ref.connect("tree_exited", _on_gentil_death)
+
 	mechant_ref = level.get_node("LeMechant")
 	if mechant_ref != null:
 		mechant_ref.connect("tree_exited", _on_mechant_death)
@@ -125,6 +130,7 @@ func _on_bottle_break(pos: Vector3, type: CreatureEnum.CreatureType, targets: Ar
 	print("spawn at ", pos)
 	spawn_creature_at_pos_with_targets(pos, type, targets)
 
+
 func wakeup():
 	for block in block_map.get_children():
 		var body: RigidBody3D = block
@@ -135,6 +141,7 @@ func wakeup():
 		mechant_ref.apply_impulse(Vector3(0, 0, 0))
 
 var current_type: CreatureEnum.CreatureType = CreatureEnum.CreatureType.None
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -148,7 +155,13 @@ func _input(event):
 
 func _on_shop_layer_creature_selected(type: CreatureEnum.CreatureType) -> void:
 	current_type = type
-	
-func _on_mechant_death() -> void:
+
+
+func _on_gentil_death() -> void:
+	print("gentil is dead")
 	wakeup()
-	
+
+
+func _on_mechant_death() -> void:
+	print("mechant is dead")
+	wakeup()

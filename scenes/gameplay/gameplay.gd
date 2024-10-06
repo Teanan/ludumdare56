@@ -132,6 +132,7 @@ func _on_bottle_break(pos: Vector3, type: CreatureEnum.CreatureType, targets: Ar
 
 
 func wakeup():
+	print("physic wakeup")
 	for block in block_map.get_children():
 		var body: RigidBody3D = block
 		body.sleeping = false

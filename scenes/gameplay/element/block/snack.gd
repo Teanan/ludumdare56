@@ -19,3 +19,9 @@ func _on_snacking_timer_timeout() -> void:
 	
 	var gameplay = get_parent().get_parent().get_parent() # sorry
 	gameplay.wakeup()
+	var wake_timer = Timer.new()
+	wake_timer.set_wait_time(0.5)
+	wake_timer.set_one_shot(true)
+	gameplay.add_child(wake_timer)
+	wake_timer.start()
+	wake_timer.connect("timeout", gameplay.wakeup)

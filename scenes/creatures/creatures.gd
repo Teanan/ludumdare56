@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var type: CreatureEnum.CreatureType = CreatureEnum.CreatureType.CLASSIC
-@export var speed: float = 8.0
+@export var speed: float = 10.0
 @export var targets: Array[Node3D]
 
 var state: CreatureEnum.CreatureState = CreatureEnum.CreatureState.IDLING

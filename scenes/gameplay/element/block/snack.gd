@@ -3,11 +3,12 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$SnackingParticles.visible = false
+	$SnackingParticles.mesh = get_parent().mesh.mesh
+	$SnackingParticles.material_override = get_parent().mesh.get_surface_override_material(0)
 
 func start_snacking() -> void:
 	$SnackingTimer.start()
-	$SnackingParticles.visible = true
+	$SnackingParticles.emitting = true
 
 func _on_snacking_timer_timeout() -> void:
 	get_parent().sleeping = false

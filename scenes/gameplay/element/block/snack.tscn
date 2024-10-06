@@ -14,7 +14,10 @@ script = ExtResource("1_06fnx")
 
 [node name="SnackingParticles" type="CPUParticles3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, 1, 4.37114e-08, -8.74228e-08, -8.74228e-08, -3.82137e-15, -1, 0, 0, 0)
-amount = 96
+emitting = false
+amount = 64
+lifetime = 1.5
+one_shot = true
 lifetime_randomness = 0.11
 mesh = SubResource("BoxMesh_pfj80")
 emission_shape = 1
@@ -23,8 +26,8 @@ initial_velocity_min = 5.0
 initial_velocity_max = 10.0
 radial_accel_max = 2.0
 damping_max = 4.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
+scale_amount_min = 0.2
+scale_amount_max = 0.4
 
 [node name="SnackingTimer" type="Timer" parent="."]
 wait_time = 2.0

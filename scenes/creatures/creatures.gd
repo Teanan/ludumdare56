@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var type: CreatureEnum.CreatureType = CreatureEnum.CreatureType.CLASSIC
-@export var speed: float = 5.0
+@export var speed: float = 8.0
 @export var targets: Array[Node3D]
 
 var state: CreatureEnum.CreatureState = CreatureEnum.CreatureState.IDLING
@@ -46,7 +46,7 @@ func look_4_snack(delta: float) -> void:
 		if position.distance_to(current_target.global_position) > 1.0:
 			position = position.move_toward(current_target.global_position, delta*speed)
 		else:
-			# current_target.start_snacking()
+			current_target.start_snacking()
 			current_target_selected = false
 			state = CreatureEnum.CreatureState.ESCAPING
 

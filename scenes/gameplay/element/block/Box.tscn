@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2obli0x52fg7"]
+[gd_scene load_steps=6 format=3 uid="uid://c2obli0x52fg7"]
 
 [ext_resource type="ArrayMesh" uid="uid://bds576gsr0w74" path="res://assets/models/block/models/box.obj" id="1_llwtq"]
 [ext_resource type="Script" path="res://scenes/gameplay/element/block/center_of_mass.gd" id="1_mlfp1"]
 [ext_resource type="Material" uid="uid://cit8nox46247a" path="res://assets/models/block/materials/wood_material.tres" id="2_tdkgl"]
+[ext_resource type="PackedScene" uid="uid://dbcvu84y5npsf" path="res://scenes/gameplay/element/block/snack.tscn" id="4_vg2d4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5qay"]
 size = Vector3(4, 4, 4)
 
-[node name="Box" type="RigidBody3D" node_paths=PackedStringArray("mesh") groups=["targetable"]]
+[node name="Box" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
 mass = 10.0
 script = ExtResource("1_mlfp1")
 mesh = NodePath("Box")
+snack = NodePath("Snack")
 
 [node name="Box" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
@@ -23,3 +25,5 @@ shape = SubResource("BoxShape3D_y5qay")
 
 [node name="CenterOfMass" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02421, 0)
+
+[node name="Snack" parent="." instance=ExtResource("4_vg2d4")]

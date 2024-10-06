@@ -11,7 +11,7 @@
 gradient = SubResource("Gradient_4c0to")
 
 [resource]
-albedo_color = Color(0.812349, 0.832816, 0.715186, 1)
+albedo_color = Color(0.6068, 0.74, 0.518, 1)
 albedo_texture = ExtResource("1_6jqaf")
 metallic = 1.0
 metallic_texture = ExtResource("3_x7hcl")

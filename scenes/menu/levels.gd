@@ -5,7 +5,7 @@ extends Control
 const MAX_LEVEL = 8
 
 # Set to true to avoid clicking on play every time
-const AUTOPLAY = true
+const AUTOPLAY = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

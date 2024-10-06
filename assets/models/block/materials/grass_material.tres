@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://bo7svsw4wjc0k"]
 
-[ext_resource type="Texture2D" uid="uid://b1h2dcxuq3von" path="res://assets/models/block/Textures/grass/grass02.jpg" id="1_d5uib"]
-[ext_resource type="Texture2D" uid="uid://dh0nhqwritjw4" path="res://assets/models/block/Textures/grass/grass02_s.jpg" id="2_it5xq"]
-[ext_resource type="Texture2D" uid="uid://bk02i0q7nolwn" path="res://assets/models/block/Textures/grass/grass02_h.jpg" id="3_giwim"]
-[ext_resource type="Texture2D" uid="uid://b2re0tcw5oc73" path="res://assets/models/block/Textures/grass/grass02_n.jpg" id="4_vkht6"]
+[ext_resource type="Texture2D" uid="uid://b1h2dcxuq3von" path="res://assets/models/block/Textures/grass/grass02.jpg" id="1_6jqaf"]
+[ext_resource type="Texture2D" uid="uid://bk02i0q7nolwn" path="res://assets/models/block/Textures/grass/grass02_h.jpg" id="2_j5kpt"]
+[ext_resource type="Texture2D" uid="uid://dh0nhqwritjw4" path="res://assets/models/block/Textures/grass/grass02_s.jpg" id="3_x7hcl"]
+[ext_resource type="Texture2D" uid="uid://b2re0tcw5oc73" path="res://assets/models/block/Textures/grass/grass02_n.jpg" id="4_yn3i5"]
 
 [sub_resource type="Gradient" id="Gradient_4c0to"]
 
@@ -12,20 +12,19 @@ gradient = SubResource("Gradient_4c0to")
 
 [resource]
 albedo_color = Color(0.812349, 0.832816, 0.715186, 1)
-albedo_texture = ExtResource("1_d5uib")
+albedo_texture = ExtResource("1_6jqaf")
 metallic = 1.0
-metallic_texture = ExtResource("2_it5xq")
+metallic_texture = ExtResource("3_x7hcl")
 emission = Color(0.580023, 0.367299, 2.88785e-07, 1)
 emission_energy_multiplier = 1.92
 emission_on_uv2 = true
 emission_texture = SubResource("GradientTexture1D_xhv07")
 normal_enabled = true
-normal_texture = ExtResource("4_vkht6")
+normal_texture = ExtResource("4_yn3i5")
 rim_tint = 1.0
 heightmap_enabled = true
 heightmap_scale = 2.0
-heightmap_texture = ExtResource("3_giwim")
+heightmap_texture = ExtResource("2_j5kpt")
 uv1_scale = Vector3(7.5, 7.5, 7.5)
-texture_filter = 0
 grow_amount = 6.8
 proximity_fade_distance = 0.01

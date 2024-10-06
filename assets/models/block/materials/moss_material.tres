@@ -1,7 +1,11 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bt53mkpyfrbxu"]
+[gd_resource type="StandardMaterial3D" load_steps=9 format=3 uid="uid://bt53mkpyfrbxu"]
 
-[ext_resource type="Texture2D" uid="uid://ce0hqr8x1sw77" path="res://assets/models/block/Textures/seamless_moss.png" id="1_1t5eg"]
-[ext_resource type="Texture2D" uid="uid://1c1kavdox26v" path="res://assets/models/block/Textures/seamless_moss_normal.png" id="2_drj4k"]
+[ext_resource type="Texture2D" uid="uid://bk48w52aepuof" path="res://assets/models/block/Textures/moss/ground_0014_color_1k.jpg" id="1_2yqax"]
+[ext_resource type="Texture2D" uid="uid://wefe1oi0fvix" path="res://assets/models/block/Textures/moss/ground_0014_ao_1k.jpg" id="2_xhamf"]
+[ext_resource type="Texture2D" uid="uid://dkapvslfsb1r1" path="res://assets/models/block/Textures/moss/ground_0014_height_1k.png" id="3_rscro"]
+[ext_resource type="Texture2D" uid="uid://c7ou78olqk3fv" path="res://assets/models/block/Textures/moss/ground_0014_normal_1k.png" id="4_m510r"]
+[ext_resource type="Texture2D" uid="uid://qcdynoyustvn" path="res://assets/models/block/Textures/moss/ground_0014_roughness_1k.jpg" id="5_kbl5m"]
+[ext_resource type="Texture2D" uid="uid://pdr131i418ka" path="res://assets/models/block/Textures/moss/ground_0014_subsurface_1k.jpg" id="6_uehfu"]
 
 [sub_resource type="Gradient" id="Gradient_4c0to"]
 
@@ -9,15 +13,22 @@
 gradient = SubResource("Gradient_4c0to")
 
 [resource]
-albedo_texture = ExtResource("1_1t5eg")
+albedo_texture = ExtResource("1_2yqax")
+roughness_texture = ExtResource("5_kbl5m")
+roughness_texture_channel = 4
 emission = Color(0.580023, 0.367299, 2.88785e-07, 1)
 emission_energy_multiplier = 1.92
 emission_on_uv2 = true
 emission_texture = SubResource("GradientTexture1D_xhv07")
 normal_enabled = true
-normal_texture = ExtResource("2_drj4k")
+normal_texture = ExtResource("4_m510r")
 rim_tint = 1.0
-uv1_triplanar = true
-texture_filter = 0
+ao_enabled = true
+ao_texture = ExtResource("2_xhamf")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("3_rscro")
+subsurf_scatter_texture = ExtResource("6_uehfu")
 grow_amount = 6.8
 proximity_fade_distance = 0.01

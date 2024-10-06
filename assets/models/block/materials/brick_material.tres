@@ -26,6 +26,5 @@ rim_tint = 1.0
 heightmap_enabled = true
 heightmap_scale = 2.0
 heightmap_texture = ExtResource("2_s0n8v")
-texture_filter = 0
 grow_amount = 6.8
 proximity_fade_distance = 0.01

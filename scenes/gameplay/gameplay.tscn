@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://4fyoq8npekf0"]
+[gd_scene load_steps=14 format=3 uid="uid://4fyoq8npekf0"]
 
 [ext_resource type="PackedScene" uid="uid://barl4q1kugrmm" path="res://scenes/gameplay/pause-layer/pause-layer.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cp3ojvq5wa35u" path="res://scenes/gameplay/shop.tscn" id="2_ra0l6"]
 [ext_resource type="PackedScene" uid="uid://cda4kuh8b7mik" path="res://scenes/gameplay/rotating_camera.tscn" id="3_hxalf"]
 [ext_resource type="Texture2D" uid="uid://1eo3vnwebdt3" path="res://assets/models/block/Textures/seamless_grass.png" id="4_75y31"]
 [ext_resource type="Script" path="res://scenes/gameplay/gameplay.gd" id="5"]
@@ -36,6 +37,8 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Gameplay" type="Node3D"]
 script = ExtResource("5")
+
+[node name="ShopLayer" parent="." instance=ExtResource("2_ra0l6")]
 
 [node name="PauseLayer" parent="." instance=ExtResource("2")]
 

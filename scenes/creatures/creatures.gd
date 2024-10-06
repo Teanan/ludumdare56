@@ -29,6 +29,27 @@ func _ready() -> void:
 	state = CreatureEnum.CreatureState.LOOKING_FOR_SNACK
 
 
+func get_snack_time(block_type: BlockEnum.BlockType) -> float:
+	return 5.0
+
+
+func start_snacking() -> void:
+	var snack_time = get_snack_time(current_target.type)
+	$snack_timer.wait_time = snack_time + 0.5
+	$snack_timer.start()
+	current_target.start_snacking(snack_time)
+	current_target_selected = false
+	state = CreatureEnum.CreatureState.SNACKING
+
+
+func _on_snack_timer_timeout() -> void:
+	if state == CreatureEnum.CreatureState.SNACKING:
+		state = CreatureEnum.CreatureState.ESCAPING
+	else:
+		print("undefined state")
+		state = CreatureEnum.CreatureState.IDLING
+
+
 func look_4_snack(delta: float) -> void:
 	if current_target_selected == false:
 		if targets.is_empty():
@@ -46,9 +67,7 @@ func look_4_snack(delta: float) -> void:
 		if position.distance_to(current_target.global_position) > 1.0:
 			position = position.move_toward(current_target.global_position, delta*speed)
 		else:
-			current_target.start_snacking()
-			current_target_selected = false
-			state = CreatureEnum.CreatureState.ESCAPING
+			start_snacking()
 
 func escape(delta: float) -> void:
 	if position.distance_to(escape_pos) > 1.0:
@@ -61,6 +80,8 @@ func _process(delta: float) -> void:
 	match state:
 		CreatureEnum.CreatureState.LOOKING_FOR_SNACK:
 			look_4_snack(delta)
+		CreatureEnum.CreatureState.SNACKING:
+			pass
 		CreatureEnum.CreatureState.ESCAPING:
 			escape(delta)
 		CreatureEnum.CreatureState.IDLING:

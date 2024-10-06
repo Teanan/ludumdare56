@@ -6,8 +6,10 @@ func _ready() -> void:
 	$SnackingParticles.mesh = get_parent().mesh.mesh
 	$SnackingParticles.material_override = get_parent().mesh.get_surface_override_material(0)
 
-func start_snacking() -> void:
+func start_snacking(snack_time: float) -> void:
+	$SnackingTimer.wait_time = snack_time
 	$SnackingTimer.start()
+	$SnackingParticles.lifetime = snack_time - 0.5
 	$SnackingParticles.emitting = true
 
 func _on_snacking_timer_timeout() -> void:

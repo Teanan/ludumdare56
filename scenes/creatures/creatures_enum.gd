@@ -9,6 +9,7 @@ enum CreatureType {
 
 enum CreatureState {
 	LOOKING_FOR_SNACK,
+	SNACKING,
 	ESCAPING,
 	IDLING
 }

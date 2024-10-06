@@ -16,7 +16,7 @@ func highlight(selected: bool) -> void:
 	else:
 		mesh.scale = Vector3(4, 4, 4)
 
-func start_snacking() -> void:
+func start_snacking(snack_time: float) -> void:
 	mesh.get_parent().sleeping = false
 	mesh.get_parent().apply_impulse(Vector3(0, 0, 0))
-	snack.start_snacking()
+	snack.start_snacking(snack_time)

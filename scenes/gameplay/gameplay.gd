@@ -6,6 +6,8 @@ extends Node
 
 var level_center: Vector3
 
+var rng = RandomNumberGenerator.new()
+
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
 func pre_start(params):
@@ -40,6 +42,7 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 		instance.position = Vector3(pos) * grid.cell_size + grid.position
 		instance.rotation = cell_basis.get_euler()
 	level_center = level.global_position
+	level_center.y = 0.0
 	grid.queue_free()
 
 
@@ -80,7 +83,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func find_start_spawn(local_selected_block: Node3D) -> Vector3:
-	var spawn_pos = level_center.direction_to(local_selected_block.global_position) * 50
+	var local_selected_block_pos = local_selected_block.global_position
+	local_selected_block_pos.y = 0.0
+	var spawn_pos = level_center.direction_to(local_selected_block_pos) * (50 + rng.randf_range(-5.0, 5.0))
 	return spawn_pos
 
 
@@ -88,6 +93,7 @@ func spawn_bottle(type: CreatureEnum.CreatureType, local_selected_block: Node3D)
 	var bottle: Resource = load("res://scenes/gameplay/element/bottle/bottle.tscn")
 	var bottle_instance: Node3D = bottle.instantiate()
 	bottle_instance.position = find_start_spawn(selected_block)
+	bottle_instance.position.y += 30 + rng.randf_range(-5.0, 5.0)
 	bottle_instance.type = type
 	bottle_instance.targets.append(local_selected_block)
 	bottle_instance.connect("broken", _on_bottle_break)

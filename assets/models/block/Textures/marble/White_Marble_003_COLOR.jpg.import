@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djp7yk5e4ikra"
-path.s3tc="res://.godot/imported/seamless_marble_normal.png-a509396bde1c802118502e8a089176e4.s3tc.ctex"
+uid="uid://cucnk38fkhs5d"
+path.s3tc="res://.godot/imported/White_Marble_003_COLOR.jpg-2944efae7557446f253627a28f0778ee.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/seamless_marble_normal.png"
-dest_files=["res://.godot/imported/seamless_marble_normal.png-a509396bde1c802118502e8a089176e4.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/marble/White_Marble_003_COLOR.jpg"
+dest_files=["res://.godot/imported/White_Marble_003_COLOR.jpg-2944efae7557446f253627a28f0778ee.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://assets/models/block/Textures/seamless_marble_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

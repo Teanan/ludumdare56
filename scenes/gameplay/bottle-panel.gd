@@ -16,7 +16,7 @@ func _ready() -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_released() and  event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
-			emit_signal("creature_selected", type)
+			creature_selected.emit(type)
 
 func _on_mouse_entered() -> void:
 	$BottleSprite.scale = Vector2(0.6, 0.6)

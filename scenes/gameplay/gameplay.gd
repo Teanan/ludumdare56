@@ -64,7 +64,7 @@ func _physics_process(_delta: float) -> void:
 	var world3d : World3D = viewport.world_3d
 	var space_state = world3d.direct_space_state
 	
-	if space_state == null:
+	if space_state == null or current_type == CreatureEnum.CreatureType.None:
 		return
 	
 	var query = PhysicsRayQueryParameters3D.create(ray_start, ray_end)#, collision_mask)
@@ -115,11 +115,15 @@ func _on_bottle_break(pos: Vector3, type: CreatureEnum.CreatureType, targets: Ar
 	spawn_creature_at_pos_with_targets(pos, type, targets)
 
 
-var current_type: CreatureEnum.CreatureType = CreatureEnum.CreatureType.CLASSIC
+var current_type: CreatureEnum.CreatureType = CreatureEnum.CreatureType.None
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_released() && event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
-			if selected_block != null:
+			if selected_block != null and current_type != CreatureEnum.CreatureType.None:
 				spawn_bottle(current_type, selected_block)
-				current_type = ((current_type + 1) % CreatureEnum.CreatureType.size()) as CreatureEnum.CreatureType
+
+
+func _on_shop_layer_creature_selected(type: CreatureEnum.CreatureType) -> void:
+	current_type = type
+	

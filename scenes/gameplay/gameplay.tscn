@@ -68,3 +68,5 @@ environment = SubResource("Environment_iixy5")
 [node name="Blocks" type="Node3D" parent="."]
 
 [node name="Creatures" type="Node3D" parent="."]
+
+[connection signal="creature_selected" from="ShopLayer" to="." method="_on_shop_layer_creature_selected"]

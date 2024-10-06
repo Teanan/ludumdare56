@@ -1,6 +1,7 @@
 class_name CreatureEnum
 
 enum CreatureType {
+	None,
 	CLASSIC,
 	FIRE,
 	WATER

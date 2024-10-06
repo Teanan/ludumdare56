@@ -42,7 +42,7 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 
 		var instance: Node3D = type.instantiate()
 		block_map.add_child.call_deferred(instance)
-		instance.position = Vector3(pos) * grid.cell_size + grid.position
+		instance.position = Vector3(pos) * grid.cell_size + grid.position + Vector3(2, 0, 2)
 		instance.rotation = cell_basis.get_euler()
 	level_center = level.global_position
 	level_center.y = 0.0

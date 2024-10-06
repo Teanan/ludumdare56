@@ -85,19 +85,23 @@ func _physics_process(_delta: float) -> void:
 func find_start_spawn(local_selected_block: Node3D) -> Vector3:
 	var local_selected_block_pos = local_selected_block.global_position
 	local_selected_block_pos.y = 0.0
-	var spawn_pos = level_center.direction_to(local_selected_block_pos) * (50 + rng.randf_range(-5.0, 5.0))
+	var spawn_pos = level_center.direction_to(local_selected_block_pos) * (75 + rng.randf_range(-5.0, 5.0))
 	return spawn_pos
 
 
 func spawn_bottle(type: CreatureEnum.CreatureType, local_selected_block: Node3D) -> void:
 	var bottle: Resource = load("res://scenes/gameplay/element/bottle/bottle.tscn")
-	var bottle_instance: Node3D = bottle.instantiate()
+	var bottle_instance: RigidBody3D = bottle.instantiate()
 	bottle_instance.position = find_start_spawn(selected_block)
 	bottle_instance.position.y += 30 + rng.randf_range(-5.0, 5.0)
 	bottle_instance.type = type
 	bottle_instance.targets.append(local_selected_block)
 	bottle_instance.connect("broken", _on_bottle_break)
 	creature_map.add_child.call_deferred(bottle_instance)
+
+	# throw
+	var dir = level_center.direction_to(local_selected_block.global_position)
+	bottle_instance.apply_impulse(dir * -20 + Vector3(0, -40, 0))
 
 
 func spawn_creature_at_pos_with_targets(pos: Vector3, type: CreatureEnum.CreatureType, targets: Array[Node3D]) -> void:
@@ -122,6 +126,7 @@ func _input(event):
 		if event.is_released() && event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if selected_block != null and current_type != CreatureEnum.CreatureType.None:
 				spawn_bottle(current_type, selected_block)
+				current_type = CreatureEnum.CreatureType.None
 
 
 func _on_shop_layer_creature_selected(type: CreatureEnum.CreatureType) -> void:

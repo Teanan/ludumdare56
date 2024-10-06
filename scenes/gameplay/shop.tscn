@@ -65,6 +65,7 @@ theme_override_constants/separation = 20
 [node name="Panel" type="CenterContainer" parent="MarginContainer/Control/VBoxOptions"]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
+mouse_filter = 0
 script = ExtResource("3_7srtf")
 
 [node name="BottleSprite" type="Sprite2D" parent="MarginContainer/Control/VBoxOptions/Panel"]
@@ -81,6 +82,7 @@ texture = ExtResource("4_3ptbv")
 [node name="Panel2" type="CenterContainer" parent="MarginContainer/Control/VBoxOptions"]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
+mouse_filter = 0
 script = ExtResource("3_7srtf")
 type = 2
 
@@ -98,6 +100,7 @@ texture = ExtResource("4_3ptbv")
 [node name="Panel3" type="CenterContainer" parent="MarginContainer/Control/VBoxOptions"]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
+mouse_filter = 0
 script = ExtResource("3_7srtf")
 type = 3
 

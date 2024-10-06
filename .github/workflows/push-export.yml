@@ -21,8 +21,8 @@ jobs:
         uses: actions/checkout@v1
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
-          mv -v /root/.local/share/godot/templates/* ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv -v /root/.local/share/godot/export_templates/* ~/.local/share/godot/export_templates/
       - name: Windows Build
         run: |
           mkdir -v -p builds/windows
@@ -56,8 +56,8 @@ jobs:
         uses: actions/checkout@v1
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
-          mv -v /root/.local/share/godot/templates/* ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv -v /root/.local/share/godot/export_templates/* ~/.local/share/godot/export_templates/
       - name: Linux Build
         run: |
           mkdir -v -p builds/linux
@@ -91,8 +91,8 @@ jobs:
         uses: actions/checkout@v1
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
-          mv -v /root/.local/share/godot/templates/* ~/.local/share/godot/export_templates/
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv -v /root/.local/share/godot/export_templates/* ~/.local/share/godot/export_templates/
       - name: Web Build
         run: |
           mkdir -v -p builds/web

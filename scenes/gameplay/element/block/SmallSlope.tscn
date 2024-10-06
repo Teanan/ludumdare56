@@ -28,3 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42929, 0)
 
 [node name="Snack" parent="." instance=ExtResource("4_jtymx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.429, 0)
+
+[node name="SnackingParticles" parent="Snack" index="0"]
+color = Color(0.882353, 0.509804, 0.380392, 1)
+
+[editable path="Snack"]

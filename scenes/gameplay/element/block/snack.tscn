@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbcvu84y5npsf"]
+[gd_scene load_steps=4 format=3 uid="uid://dbcvu84y5npsf"]
 
 [ext_resource type="Script" path="res://scenes/gameplay/element/block/snack.gd" id="1_06fnx"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_6rlvp"]
-size = Vector3(4, 4, 4)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhpxb"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_pfj80"]
+material = SubResource("StandardMaterial3D_hhpxb")
+size = Vector3(3, 3, 3)
 
 [node name="Snack" type="Node3D"]
 script = ExtResource("1_06fnx")
@@ -12,7 +16,7 @@ script = ExtResource("1_06fnx")
 transform = Transform3D(-4.37114e-08, 1, 0, 1, 4.37114e-08, -8.74228e-08, -8.74228e-08, -3.82137e-15, -1, 0, 0, 0)
 amount = 96
 lifetime_randomness = 0.11
-mesh = SubResource("BoxMesh_6rlvp")
+mesh = SubResource("BoxMesh_pfj80")
 emission_shape = 1
 emission_sphere_radius = 8.0
 initial_velocity_min = 5.0

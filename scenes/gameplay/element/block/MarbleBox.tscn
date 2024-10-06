@@ -11,6 +11,7 @@ size = Vector3(4, 4, 4)
 [node name="MarbleBox" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
 mass = 10.0
 script = ExtResource("1_7xxsk")
+type = 1
 mesh = NodePath("MarbleBox")
 snack = NodePath("Snack")
 

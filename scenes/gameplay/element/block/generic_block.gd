@@ -2,6 +2,7 @@ extends RigidBody3D
 
 @onready var com_marker = $CenterOfMass
 
+@export var type: BlockEnum.BlockType
 @export var mesh: MeshInstance3D
 @export var snack: Node3D
 

@@ -11,6 +11,7 @@ points = PackedVector3Array(-0.5, 1, 0.5, 1.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 0, 0
 [node name="WoodSlope" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
 mass = 60.0
 script = ExtResource("1_n7y3g")
+type = 3
 mesh = NodePath("WoodSlope")
 snack = NodePath("Snack")
 

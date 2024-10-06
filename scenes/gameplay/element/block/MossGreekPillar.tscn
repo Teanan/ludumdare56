@@ -12,6 +12,7 @@ points = PackedVector3Array(-0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 3, 
 mass = 200.0
 center_of_mass_mode = 1
 script = ExtResource("1_iinmn")
+type = 2
 mesh = NodePath("MossGreekPillar")
 snack = NodePath("Snack")
 

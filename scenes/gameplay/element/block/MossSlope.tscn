@@ -11,6 +11,7 @@ points = PackedVector3Array(-0.5, 1, 0.5, 1.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 0, 0
 [node name="MossSlope" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
 mass = 60.0
 script = ExtResource("1_ucdh4")
+type = 2
 mesh = NodePath("MossSlope")
 snack = NodePath("Snack")
 

@@ -11,6 +11,7 @@ size = Vector3(4, 4, 4)
 [node name="WoodBox" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
 mass = 10.0
 script = ExtResource("1_mlfp1")
+type = 3
 mesh = NodePath("WoodBox")
 snack = NodePath("Snack")
 

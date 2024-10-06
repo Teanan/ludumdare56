@@ -11,6 +11,7 @@ size = Vector3(4, 4, 4)
 [node name="MossBox" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
 mass = 10.0
 script = ExtResource("1_tbjhp")
+type = 2
 mesh = NodePath("MossBox")
 snack = NodePath("Snack")
 

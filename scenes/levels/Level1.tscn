@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ubtoym1jf34b"]
+[gd_scene load_steps=2 format=3 uid="uid://ubtoym1jf34b"]
 
-[ext_resource type="MeshLibrary" uid="uid://cbeahp2y80w02" path="res://scenes/tiles/Tiles.meshlib" id="1_gbyyr"]
-[ext_resource type="MeshLibrary" uid="uid://c5unw5fobro4r" path="res://scenes/tiles/Materials.tres" id="2_ey0mo"]
+[ext_resource type="MeshLibrary" uid="uid://dga86b17gfopv" path="res://scenes/tiles/Tiles.meshlib" id="1_gbyyr"]
 
 [node name="Test1" type="Node3D"]
 
@@ -14,7 +13,6 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="GoalMap" type="GridMap" parent="."]
-mesh_library = ExtResource("2_ey0mo")
 cell_size = Vector3(4.05, 4.05, 4.05)
 data = {
 "cells": PackedInt32Array(262147, 3, 786432, 262147, 1, 786432, 65533, 3, 851969, 65533, 1, 851969, 65533, 65535, 851969, 65535, 1, 851969, 65535, 65535, 851969)

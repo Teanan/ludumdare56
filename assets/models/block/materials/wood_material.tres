@@ -1,12 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=10 format=3 uid="uid://cit8nox46247a"]
 
-[ext_resource type="Texture2D" uid="uid://c4n3prmt5xwy0" path="res://assets/models/block/Textures/wood_plank_2_baseColor.jpeg" id="1_bge40"]
-[ext_resource type="Texture2D" uid="uid://dhyfep11xs5jp" path="res://assets/models/block/Textures/wood_plank_2_ambientOcclusion.jpeg" id="2_k4446"]
-[ext_resource type="Texture2D" uid="uid://b4kqa1kthrusb" path="res://assets/models/block/Textures/wood_plank_2_height.jpeg" id="3_rexir"]
-[ext_resource type="Texture2D" uid="uid://dksrievrg2626" path="res://assets/models/block/Textures/wood_plank_2_specular.jpeg" id="4_uixn3"]
-[ext_resource type="Texture2D" uid="uid://qyo6tqjh03bw" path="res://assets/models/block/Textures/wood_plank_2_normal.jpeg" id="5_7jkur"]
-[ext_resource type="Texture2D" uid="uid://lr4o5hmnnonp" path="res://assets/models/block/Textures/wood_plank_2_glossiness.jpeg" id="6_ral2c"]
-[ext_resource type="Texture2D" uid="uid://cqo24nukcojkt" path="res://assets/models/block/Textures/wood_plank_2_roughness.jpeg" id="7_w7qns"]
+[ext_resource type="Texture2D" uid="uid://c4n3prmt5xwy0" path="res://assets/models/block/Textures/wood/wood_plank_2_baseColor.jpeg" id="1_bge40"]
+[ext_resource type="Texture2D" uid="uid://dhyfep11xs5jp" path="res://assets/models/block/Textures/wood/wood_plank_2_ambientOcclusion.jpeg" id="2_k4446"]
+[ext_resource type="Texture2D" uid="uid://b4kqa1kthrusb" path="res://assets/models/block/Textures/wood/wood_plank_2_height.jpeg" id="3_rexir"]
+[ext_resource type="Texture2D" uid="uid://dksrievrg2626" path="res://assets/models/block/Textures/wood/wood_plank_2_specular.jpeg" id="4_uixn3"]
+[ext_resource type="Texture2D" uid="uid://qyo6tqjh03bw" path="res://assets/models/block/Textures/wood/wood_plank_2_normal.jpeg" id="5_7jkur"]
+[ext_resource type="Texture2D" uid="uid://lr4o5hmnnonp" path="res://assets/models/block/Textures/wood/wood_plank_2_glossiness.jpeg" id="6_ral2c"]
+[ext_resource type="Texture2D" uid="uid://cqo24nukcojkt" path="res://assets/models/block/Textures/wood/wood_plank_2_roughness.jpeg" id="7_w7qns"]
 
 [sub_resource type="Gradient" id="Gradient_4c0to"]
 

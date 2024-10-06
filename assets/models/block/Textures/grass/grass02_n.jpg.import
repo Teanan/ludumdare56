@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkdh07vtrapx5"
-path.s3tc="res://.godot/imported/wood_plank_2_metallic.jpeg-2bd797dd9469d7338c958013eafd58ac.s3tc.ctex"
+uid="uid://b2re0tcw5oc73"
+path.s3tc="res://.godot/imported/grass02_n.jpg-a9f32b6ef55d3d5438a90a88fb446c1b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/wood_plank_2_metallic.jpeg"
-dest_files=["res://.godot/imported/wood_plank_2_metallic.jpeg-2bd797dd9469d7338c958013eafd58ac.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/grass/grass02_n.jpg"
+dest_files=["res://.godot/imported/grass02_n.jpg-a9f32b6ef55d3d5438a90a88fb446c1b.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/models/block/Textures/grass02_n.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

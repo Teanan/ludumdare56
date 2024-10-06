@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df0pys1uyo4gp"
-path.s3tc="res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Specular_1K.png-d2b257c337722603ad96f4c079be11c5.s3tc.ctex"
+uid="uid://dksrievrg2626"
+path.s3tc="res://.godot/imported/wood_plank_2_specular.jpeg-4ee99931baa7587b0beda128714a44d6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Specular_1K.png"
-dest_files=["res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Specular_1K.png-d2b257c337722603ad96f4c079be11c5.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/wood/wood_plank_2_specular.jpeg"
+dest_files=["res://.godot/imported/wood_plank_2_specular.jpeg-4ee99931baa7587b0beda128714a44d6.s3tc.ctex"]
 
 [params]
 

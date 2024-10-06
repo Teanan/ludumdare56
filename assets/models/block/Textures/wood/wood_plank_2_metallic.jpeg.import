@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1eo3vnwebdt3"
-path.s3tc="res://.godot/imported/seamless_grass.png-33b32106d03bf6a4a20c59ae4de2563b.s3tc.ctex"
+uid="uid://dkdh07vtrapx5"
+path.s3tc="res://.godot/imported/wood_plank_2_metallic.jpeg-ab94de0b1079a11de618fe45f0d1c745.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/seamless_grass.png"
-dest_files=["res://.godot/imported/seamless_grass.png-33b32106d03bf6a4a20c59ae4de2563b.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/wood/wood_plank_2_metallic.jpeg"
+dest_files=["res://.godot/imported/wood_plank_2_metallic.jpeg-ab94de0b1079a11de618fe45f0d1c745.s3tc.ctex"]
 
 [params]
 

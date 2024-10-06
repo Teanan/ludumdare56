@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4kqa1kthrusb"
-path.s3tc="res://.godot/imported/wood_plank_2_height.jpeg-0eeb83996360814be20107b0625dfb87.s3tc.ctex"
+uid="uid://cqo24nukcojkt"
+path.s3tc="res://.godot/imported/wood_plank_2_roughness.jpeg-271df5e2d055c4fadf806d7da03c5d1e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/wood_plank_2_height.jpeg"
-dest_files=["res://.godot/imported/wood_plank_2_height.jpeg-0eeb83996360814be20107b0625dfb87.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/wood/wood_plank_2_roughness.jpeg"
+dest_files=["res://.godot/imported/wood_plank_2_roughness.jpeg-271df5e2d055c4fadf806d7da03c5d1e.s3tc.ctex"]
 
 [params]
 

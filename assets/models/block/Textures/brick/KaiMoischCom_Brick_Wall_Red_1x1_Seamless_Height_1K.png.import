@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3oiekmjjc6ii"
-path.s3tc="res://.godot/imported/seamless_wood.png-e66bd25b1953ac4fb9875c4a23474113.s3tc.ctex"
+uid="uid://dlmfw1lwgsvwg"
+path.s3tc="res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png-6018b4c594babad1d697fb5e2b427afb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/seamless_wood.png"
-dest_files=["res://.godot/imported/seamless_wood.png-e66bd25b1953ac4fb9875c4a23474113.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/brick/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png"
+dest_files=["res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png-6018b4c594babad1d697fb5e2b427afb.s3tc.ctex"]
 
 [params]
 

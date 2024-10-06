@@ -1,10 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://b3l3s4oxbecqk"]
 
-[ext_resource type="Texture2D" uid="uid://cdo8xoje5sdds" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Albedo_1K.png" id="1_55bir"]
-[ext_resource type="Texture2D" uid="uid://dlmfw1lwgsvwg" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png" id="2_s0n8v"]
-[ext_resource type="Texture2D" uid="uid://df0pys1uyo4gp" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Specular_1K.png" id="3_013t8"]
-[ext_resource type="Texture2D" uid="uid://dpvoafl35gh3k" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png" id="4_xh2j2"]
-[ext_resource type="Texture2D" uid="uid://cwx1pqowlxyi5" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Rough_1K.png" id="5_d4c00"]
+[ext_resource type="Texture2D" uid="uid://cdo8xoje5sdds" path="res://assets/models/block/Textures/brick/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Albedo_1K.png" id="1_55bir"]
+[ext_resource type="Texture2D" uid="uid://dlmfw1lwgsvwg" path="res://assets/models/block/Textures/brick/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png" id="2_s0n8v"]
+[ext_resource type="Texture2D" uid="uid://df0pys1uyo4gp" path="res://assets/models/block/Textures/brick/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Specular_1K.png" id="3_013t8"]
+[ext_resource type="Texture2D" uid="uid://dpvoafl35gh3k" path="res://assets/models/block/Textures/brick/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png" id="4_xh2j2"]
+[ext_resource type="Texture2D" uid="uid://cwx1pqowlxyi5" path="res://assets/models/block/Textures/brick/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Rough_1K.png" id="5_d4c00"]
 
 [sub_resource type="Gradient" id="Gradient_4c0to"]
 

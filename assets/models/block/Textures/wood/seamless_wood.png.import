@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdo8xoje5sdds"
-path.s3tc="res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Albedo_1K.png-08ba6429225ce37931327cb969b888b7.s3tc.ctex"
+uid="uid://c3oiekmjjc6ii"
+path.s3tc="res://.godot/imported/seamless_wood.png-cdade60ef7ff459c60246e964f220f1a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Albedo_1K.png"
-dest_files=["res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Albedo_1K.png-08ba6429225ce37931327cb969b888b7.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/wood/seamless_wood.png"
+dest_files=["res://.godot/imported/seamless_wood.png-cdade60ef7ff459c60246e964f220f1a.s3tc.ctex"]
 
 [params]
 

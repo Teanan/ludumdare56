@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpvoafl35gh3k"
-path.s3tc="res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png-fd390bb9a759e08e17e9cad4a0029aa7.s3tc.ctex"
+path.s3tc="res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png-4bfc772fdf76df87d5f325d1a96d292a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png"
-dest_files=["res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png-fd390bb9a759e08e17e9cad4a0029aa7.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/brick/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png"
+dest_files=["res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png-4bfc772fdf76df87d5f325d1a96d292a.s3tc.ctex"]
 
 [params]
 

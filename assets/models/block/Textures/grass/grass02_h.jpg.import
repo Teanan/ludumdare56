@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlmfw1lwgsvwg"
-path.s3tc="res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png-4a33e10263006ea9ec20225d87b038f4.s3tc.ctex"
+uid="uid://bk02i0q7nolwn"
+path.s3tc="res://.godot/imported/grass02_h.jpg-6cf9b44f14a2a4eb5bdeae89c9cd968b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png"
-dest_files=["res://.godot/imported/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png-4a33e10263006ea9ec20225d87b038f4.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/grass/grass02_h.jpg"
+dest_files=["res://.godot/imported/grass02_h.jpg-6cf9b44f14a2a4eb5bdeae89c9cd968b.s3tc.ctex"]
 
 [params]
 

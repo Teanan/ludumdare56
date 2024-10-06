@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hpk8noaq5eme"
-path.s3tc="res://.godot/imported/seamless_brick_normal.png-ddc4e9eefb7f4c224f81f638ebcb01ef.s3tc.ctex"
+uid="uid://qyo6tqjh03bw"
+path.s3tc="res://.godot/imported/wood_plank_2_normal.jpeg-7240871133b342daf0d600e3a6eb34e5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/block/Textures/seamless_brick_normal.png"
-dest_files=["res://.godot/imported/seamless_brick_normal.png-ddc4e9eefb7f4c224f81f638ebcb01ef.s3tc.ctex"]
+source_file="res://assets/models/block/Textures/wood/wood_plank_2_normal.jpeg"
+dest_files=["res://.godot/imported/wood_plank_2_normal.jpeg-7240871133b342daf0d600e3a6eb34e5.s3tc.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/models/block/Textures/seamless_brick_normal.png"
+roughness/src_normal="res://assets/models/block/Textures/wood_plank_2_normal.jpeg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

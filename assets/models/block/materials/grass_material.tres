@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://bo7svsw4wjc0k"]
 
-[ext_resource type="Texture2D" uid="uid://b1h2dcxuq3von" path="res://assets/models/block/Textures/grass02.jpg" id="1_d5uib"]
-[ext_resource type="Texture2D" uid="uid://dh0nhqwritjw4" path="res://assets/models/block/Textures/grass02_s.jpg" id="2_it5xq"]
-[ext_resource type="Texture2D" uid="uid://bk02i0q7nolwn" path="res://assets/models/block/Textures/grass02_h.jpg" id="3_giwim"]
-[ext_resource type="Texture2D" uid="uid://b2re0tcw5oc73" path="res://assets/models/block/Textures/grass02_n.jpg" id="4_vkht6"]
+[ext_resource type="Texture2D" uid="uid://b1h2dcxuq3von" path="res://assets/models/block/Textures/grass/grass02.jpg" id="1_d5uib"]
+[ext_resource type="Texture2D" uid="uid://dh0nhqwritjw4" path="res://assets/models/block/Textures/grass/grass02_s.jpg" id="2_it5xq"]
+[ext_resource type="Texture2D" uid="uid://bk02i0q7nolwn" path="res://assets/models/block/Textures/grass/grass02_h.jpg" id="3_giwim"]
+[ext_resource type="Texture2D" uid="uid://b2re0tcw5oc73" path="res://assets/models/block/Textures/grass/grass02_n.jpg" id="4_vkht6"]
 
 [sub_resource type="Gradient" id="Gradient_4c0to"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://b1k07jk1hpthv"]
 
-[ext_resource type="Script" path="res://scenes/creatures/legentil.gd" id="1_7ggiq"]
+[ext_resource type="Script" path="res://scenes/creatures/main_character.gd" id="1_25ibr"]
 [ext_resource type="Material" uid="uid://ccebn5qhn3cxh" path="res://assets/models/creature/gentil_material.tres" id="2_w08er"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u2wul"]
@@ -81,7 +81,7 @@ radial_segments = 32
 rings = 16
 
 [node name="LeGentil" type="RigidBody3D"]
-script = ExtResource("1_7ggiq")
+script = ExtResource("1_25ibr")
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.999996, 0.00250423, 0.000986808, 0.00250352, 0.999997, -0.00040546, -0.00131709, -0.000537317, -0.749999, 0, 0, 0)

@@ -13,3 +13,8 @@ enum CreatureState {
 	ESCAPING,
 	IDLING
 }
+
+enum MainCharType {
+	GENTIL,
+	MECHANT
+}

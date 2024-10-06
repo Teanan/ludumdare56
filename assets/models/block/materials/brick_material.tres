@@ -1,7 +1,10 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b3l3s4oxbecqk"]
+[gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://b3l3s4oxbecqk"]
 
-[ext_resource type="Texture2D" uid="uid://b1j7ynyu0twlu" path="res://assets/models/block/Textures/seamless_brick.png" id="1_8his1"]
-[ext_resource type="Texture2D" uid="uid://hpk8noaq5eme" path="res://assets/models/block/Textures/seamless_brick_normal.png" id="2_8kofu"]
+[ext_resource type="Texture2D" uid="uid://cdo8xoje5sdds" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Albedo_1K.png" id="1_55bir"]
+[ext_resource type="Texture2D" uid="uid://dlmfw1lwgsvwg" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Height_1K.png" id="2_s0n8v"]
+[ext_resource type="Texture2D" uid="uid://df0pys1uyo4gp" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Specular_1K.png" id="3_013t8"]
+[ext_resource type="Texture2D" uid="uid://dpvoafl35gh3k" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Normal_1K.png" id="4_xh2j2"]
+[ext_resource type="Texture2D" uid="uid://cwx1pqowlxyi5" path="res://assets/models/block/Textures/KaiMoischCom_Brick_Wall_Red_1x1_Seamless_Rough_1K.png" id="5_d4c00"]
 
 [sub_resource type="Gradient" id="Gradient_4c0to"]
 
@@ -9,14 +12,20 @@
 gradient = SubResource("Gradient_4c0to")
 
 [resource]
-albedo_texture = ExtResource("1_8his1")
+albedo_texture = ExtResource("1_55bir")
+metallic_specular = 0.2
+metallic_texture = ExtResource("3_013t8")
+roughness_texture = ExtResource("5_d4c00")
 emission = Color(0.580023, 0.367299, 2.88785e-07, 1)
 emission_energy_multiplier = 1.92
 emission_on_uv2 = true
 emission_texture = SubResource("GradientTexture1D_xhv07")
 normal_enabled = true
-normal_texture = ExtResource("2_8kofu")
+normal_texture = ExtResource("4_xh2j2")
 rim_tint = 1.0
+heightmap_enabled = true
+heightmap_scale = 2.0
+heightmap_texture = ExtResource("2_s0n8v")
 texture_filter = 0
 grow_amount = 6.8
 proximity_fade_distance = 0.01

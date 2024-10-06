@@ -1,14 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://4fyoq8npekf0"]
+[gd_scene load_steps=13 format=3 uid="uid://4fyoq8npekf0"]
 
 [ext_resource type="PackedScene" uid="uid://barl4q1kugrmm" path="res://scenes/gameplay/pause-layer/pause-layer.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cda4kuh8b7mik" path="res://scenes/gameplay/rotating_camera.tscn" id="3_hxalf"]
+[ext_resource type="Texture2D" uid="uid://1eo3vnwebdt3" path="res://assets/models/block/Textures/seamless_grass.png" id="4_75y31"]
 [ext_resource type="Script" path="res://scenes/gameplay/gameplay.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://by3dc6tnqjkhr" path="res://assets/models/block/Textures/seamless_grass_normal.png" id="5_jpscb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f6qtl"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nhfna"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu12e"]
+albedo_texture = ExtResource("4_75y31")
+normal_enabled = true
+normal_texture = ExtResource("5_jpscb")
+uv1_scale = Vector3(20, 20, 20)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_yhuua"]
+material = SubResource("StandardMaterial3D_lu12e")
 top_radius = 100.0
 bottom_radius = 100.0
 height = 1.0

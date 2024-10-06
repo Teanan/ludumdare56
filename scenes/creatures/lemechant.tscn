@@ -80,11 +80,11 @@ albedo_color = Color(0.494118, 0.243137, 0.203922, 1)
 material = SubResource("StandardMaterial3D_pwnk0")
 size = Vector3(9, 4, 0.11)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56mtu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1t3m5"]
 albedo_color = Color(0.65625, 0.15667, 0.127279, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_pfn2y"]
-material = SubResource("StandardMaterial3D_56mtu")
+material = SubResource("StandardMaterial3D_1t3m5")
 radial_segments = 32
 rings = 16
 
@@ -142,9 +142,9 @@ mesh = SubResource("SphereMesh_pfn2y")
 emission_shape = 1
 emission_sphere_radius = 1.0
 direction = Vector3(0, 1, 0)
+spread = 180.0
 initial_velocity_min = 10.0
 initial_velocity_max = 15.0
-damping_max = 5.0
 scale_amount_min = 0.5
 scale_amount_max = 1.5
 

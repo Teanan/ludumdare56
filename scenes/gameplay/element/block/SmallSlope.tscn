@@ -27,3 +27,4 @@ shape = SubResource("ConvexPolygonShape3D_swr0r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42929, 0)
 
 [node name="Snack" parent="." instance=ExtResource("4_jtymx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.429, 0)

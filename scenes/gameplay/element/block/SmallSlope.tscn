@@ -7,9 +7,10 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_swr0r"]
 points = PackedVector3Array(-0.5, 1, 0.5, 1.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 0, 0.5, 1.5, 0, -0.5, -0.5, 0, -0.5)
 
-[node name="SmallSlope" type="RigidBody3D"]
+[node name="SmallSlope" type="RigidBody3D" node_paths=PackedStringArray("mesh") groups=["targetable"]]
 mass = 60.0
 script = ExtResource("1_u5sdo")
+mesh = NodePath("SmallSlope")
 
 [node name="SmallSlope" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
@@ -20,5 +21,5 @@ surface_material_override/0 = ExtResource("2_7f6yc")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_swr0r")
 
-[node name="CenterOfMass" type="Marker3D" parent="."]
+[node name="CenterOfMass" type="Marker3D" parent="." groups=["targetable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42929, 0)

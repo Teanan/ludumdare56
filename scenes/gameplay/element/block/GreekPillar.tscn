@@ -7,10 +7,11 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6ayvl"]
 points = PackedVector3Array(-0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 3, -0.5, 0.5, 0, 0.5, 0.5, 3, -0.5, -0.5, 3, 0.5, 0.5, 3, 0.5)
 
-[node name="GreekPillar" type="RigidBody3D"]
+[node name="GreekPillar" type="RigidBody3D" node_paths=PackedStringArray("mesh") groups=["targetable"]]
 mass = 200.0
 center_of_mass_mode = 1
 script = ExtResource("1_44mta")
+mesh = NodePath("GreekPillar")
 
 [node name="GreekPillar" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

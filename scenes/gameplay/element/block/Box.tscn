@@ -7,9 +7,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5qay"]
 size = Vector3(4, 4, 4)
 
-[node name="Box" type="RigidBody3D"]
+[node name="Box" type="RigidBody3D" node_paths=PackedStringArray("mesh") groups=["targetable"]]
 mass = 10.0
 script = ExtResource("1_mlfp1")
+mesh = NodePath("Box")
 
 [node name="Box" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

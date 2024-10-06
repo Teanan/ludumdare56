@@ -7,9 +7,10 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gkisf"]
 points = PackedVector3Array(-1.5, 0, -0.5, -1.5, 0.5, -0.5, 1.5, 0, -0.5, -1.5, 0, 1.5, -1.5, 0.5, 1.5, 1.5, 0.5, -0.5, 1.5, 0, 1.5, 1.5, 0.5, 1.5)
 
-[node name="HalfSlab" type="RigidBody3D"]
+[node name="HalfSlab" type="RigidBody3D" node_paths=PackedStringArray("mesh") groups=["targetable"]]
 mass = 40.0
 script = ExtResource("1_7561k")
+mesh = NodePath("HalfSlab")
 
 [node name="HalfSlab" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -1.76041)

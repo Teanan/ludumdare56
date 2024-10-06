@@ -69,7 +69,7 @@ func _physics_process(_delta: float) -> void:
 	
 	var intersect = space_state.intersect_ray(query)
 	if "collider" in intersect and intersect["collider"].is_in_group("targetable"):
-		var block_node = intersect["collider"].get_parent()
+		var block_node = intersect["collider"]
 		if selected_block != block_node:
 			if selected_block != null:
 				selected_block.highlight(false)
@@ -80,7 +80,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func find_start_spawn(local_selected_block: Node3D) -> Vector3:
-	var spawn_pos = level_center.direction_to(local_selected_block.body.global_position) * 50
+	var spawn_pos = level_center.direction_to(local_selected_block.global_position) * 50
 	return spawn_pos
 
 

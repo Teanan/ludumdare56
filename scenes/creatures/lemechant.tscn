@@ -80,11 +80,11 @@ albedo_color = Color(0.494118, 0.243137, 0.203922, 1)
 material = SubResource("StandardMaterial3D_pwnk0")
 size = Vector3(9, 4, 0.11)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ha7w"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56mtu"]
 albedo_color = Color(0.65625, 0.15667, 0.127279, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_pfn2y"]
-material = SubResource("StandardMaterial3D_0ha7w")
+material = SubResource("StandardMaterial3D_56mtu")
 radial_segments = 32
 rings = 16
 

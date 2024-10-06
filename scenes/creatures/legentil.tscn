@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://b1k07jk1hpthv"]
+[gd_scene load_steps=17 format=4 uid="uid://b1k07jk1hpthv"]
 
-[ext_resource type="Script" path="res://scenes/creatures/lemechant.gd" id="1_i30xm"]
+[ext_resource type="Script" path="res://scenes/creatures/legentil.gd" id="1_7ggiq"]
 [ext_resource type="Material" uid="uid://ccebn5qhn3cxh" path="res://assets/models/creature/gentil_material.tres" id="2_w08er"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u2wul"]
@@ -69,8 +69,19 @@ material = ExtResource("2_w08er")
 inner_radius = 3.0
 outer_radius = 4.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6pf17"]
+size = Vector3(9.03931, 6, 2.85962)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ha7w"]
+albedo_color = Color(0.65625, 0.15667, 0.127279, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1gufy"]
+material = SubResource("StandardMaterial3D_0ha7w")
+radial_segments = 32
+rings = 16
+
 [node name="LeGentil" type="RigidBody3D"]
-script = ExtResource("1_i30xm")
+script = ExtResource("1_7ggiq")
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.999996, 0.00250423, 0.000986808, 0.00250352, 0.999997, -0.00040546, -0.00131709, -0.000537317, -0.749999, 0, 0, 0)
@@ -125,3 +136,29 @@ mesh = SubResource("BoxMesh_6jmbm")
 [node name="Torus" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0)
 mesh = SubResource("TorusMesh_rvyo4")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337524, 0, -0.0463691)
+shape = SubResource("BoxShape3D_6pf17")
+
+[node name="DeathParticles" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.745457)
+emitting = false
+amount = 32
+lifetime = 3.4
+lifetime_randomness = 0.1
+mesh = SubResource("SphereMesh_1gufy")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+damping_max = 5.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

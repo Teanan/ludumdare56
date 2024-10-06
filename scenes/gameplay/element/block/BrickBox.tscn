@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/gameplay/element/block/generic_block.gd" id="1_uf0kd"]
 [ext_resource type="ArrayMesh" uid="uid://bds576gsr0w74" path="res://assets/models/block/models/box.obj" id="2_pr8g6"]
-[ext_resource type="Material" uid="uid://cit8nox46247a" path="res://assets/models/block/materials/wood_material.tres" id="3_af1ns"]
+[ext_resource type="Material" uid="uid://b3l3s4oxbecqk" path="res://assets/models/block/materials/brick_material.tres" id="3_qn2xr"]
 [ext_resource type="PackedScene" uid="uid://dbcvu84y5npsf" path="res://scenes/gameplay/element/block/snack.tscn" id="4_mjp36"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5qay"]
@@ -17,7 +17,7 @@ snack = NodePath("Snack")
 [node name="BrickBox" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 mesh = ExtResource("2_pr8g6")
-surface_material_override/0 = ExtResource("3_af1ns")
+surface_material_override/0 = ExtResource("3_qn2xr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/gameplay/element/block/generic_block.gd" id="1_c8816"]
 [ext_resource type="ArrayMesh" uid="uid://bnnle6t24skhr" path="res://assets/models/block/models/half_slab.obj" id="2_yqh6a"]
-[ext_resource type="Material" uid="uid://bt53mkpyfrbxu" path="res://assets/models/block/materials/moss_material.tres" id="3_5m1q2"]
+[ext_resource type="Material" uid="uid://cit8nox46247a" path="res://assets/models/block/materials/wood_material.tres" id="3_eyqio"]
 [ext_resource type="PackedScene" uid="uid://dbcvu84y5npsf" path="res://scenes/gameplay/element/block/snack.tscn" id="4_0njym"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gkisf"]
@@ -17,7 +17,7 @@ snack = NodePath("Snack")
 [node name="WoodHalfSlab" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -1.76041)
 mesh = ExtResource("2_yqh6a")
-surface_material_override/0 = ExtResource("3_5m1q2")
+surface_material_override/0 = ExtResource("3_eyqio")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -1.76041)

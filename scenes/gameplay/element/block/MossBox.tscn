@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/gameplay/element/block/generic_block.gd" id="1_tbjhp"]
 [ext_resource type="ArrayMesh" uid="uid://bds576gsr0w74" path="res://assets/models/block/models/box.obj" id="2_54ici"]
-[ext_resource type="Material" uid="uid://cit8nox46247a" path="res://assets/models/block/materials/wood_material.tres" id="3_qufd6"]
+[ext_resource type="Material" uid="uid://bt53mkpyfrbxu" path="res://assets/models/block/materials/moss_material.tres" id="3_k7ypw"]
 [ext_resource type="PackedScene" uid="uid://dbcvu84y5npsf" path="res://scenes/gameplay/element/block/snack.tscn" id="4_isj3n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5qay"]
@@ -17,7 +17,7 @@ snack = NodePath("Snack")
 [node name="MossBox" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 mesh = ExtResource("2_54ici")
-surface_material_override/0 = ExtResource("3_qufd6")
+surface_material_override/0 = ExtResource("3_k7ypw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

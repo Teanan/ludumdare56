@@ -51,5 +51,6 @@ scale_amount_min = 0.08
 scale_amount_max = 0.12
 
 [node name="snack_timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="snack_timer" to="." method="_on_snack_timer_timeout"]

@@ -30,7 +30,40 @@ func _ready() -> void:
 
 
 func get_snack_time(block_type: BlockEnum.BlockType) -> float:
-	return 5.0
+	var very_short: float = 2.0
+	var short: float = 4.0
+	var long: float = 6.0
+	var very_long: float = 8.0
+
+	if type == CreatureEnum.CreatureType.CLASSIC:
+		if block_type == BlockEnum.BlockType.BRICK:
+			return long
+		elif block_type == BlockEnum.BlockType.MARBLE:
+			return long
+		elif block_type == BlockEnum.BlockType.MOSS:
+			return long
+		elif block_type == BlockEnum.BlockType.WOOD:
+			return long
+	elif type == CreatureEnum.CreatureType.FIRE:
+		if block_type == BlockEnum.BlockType.BRICK:
+			return very_long
+		elif block_type == BlockEnum.BlockType.MARBLE:
+			return long
+		elif block_type == BlockEnum.BlockType.MOSS:
+			return short
+		elif block_type == BlockEnum.BlockType.WOOD:
+			return very_short
+	elif type == CreatureEnum.CreatureType.WATER:
+		if block_type == BlockEnum.BlockType.BRICK:
+			return very_short
+		elif block_type == BlockEnum.BlockType.MARBLE:
+			return short
+		elif block_type == BlockEnum.BlockType.MOSS:
+			return long
+		elif block_type == BlockEnum.BlockType.WOOD:
+			return very_long
+
+	return very_long
 
 
 func start_snacking() -> void:

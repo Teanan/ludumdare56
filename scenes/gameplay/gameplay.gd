@@ -49,7 +49,7 @@ func _on_level_grid_loaded(level: Node3D) -> void:
 	
 	mechant_ref = level.get_node("LeMechant")
 	if mechant_ref != null:
-		mechant_ref.connect("tree_existed", _on_mechant_death)
+		mechant_ref.connect("tree_exited", _on_mechant_death)
 
 
 # `start()` is called after pre_start and after the graphic transition ends.
@@ -86,6 +86,7 @@ func _physics_process(_delta: float) -> void:
 			selected_block.highlight(true)
 	elif selected_block != null:
 		selected_block.highlight(false)
+		selected_block = null
 
 
 func find_start_spawn(local_selected_block: Node3D) -> Vector3:
@@ -141,6 +142,8 @@ func _input(event):
 			if selected_block != null and current_type != CreatureEnum.CreatureType.None:
 				spawn_bottle(current_type, selected_block)
 				current_type = CreatureEnum.CreatureType.None
+				selected_block.highlight(false)
+				$ShopLayer.clear()
 
 
 func _on_shop_layer_creature_selected(type: CreatureEnum.CreatureType) -> void:

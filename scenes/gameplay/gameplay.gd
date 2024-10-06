@@ -136,6 +136,9 @@ func wakeup():
 		var body: RigidBody3D = block
 		body.sleeping = false
 		body.apply_impulse(Vector3(0, 0, 0))
+	if gentil_ref != null:
+		gentil_ref.sleeping = false
+		gentil_ref.apply_impulse(Vector3(0, 0, 0))
 	if mechant_ref != null:
 		mechant_ref.sleeping = false
 		mechant_ref.apply_impulse(Vector3(0, 0, 0))

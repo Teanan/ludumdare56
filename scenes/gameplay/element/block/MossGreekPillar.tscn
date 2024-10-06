@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv1anlpbcm7bt"]
+
+[ext_resource type="Script" path="res://scenes/gameplay/element/block/generic_block.gd" id="1_iinmn"]
+[ext_resource type="ArrayMesh" uid="uid://d3qncuju8uuw" path="res://assets/models/block/models/greek_pillar.obj" id="2_ahd4m"]
+[ext_resource type="Material" uid="uid://cg8u317u7qjnu" path="res://assets/models/block/materials/marble_material.tres" id="3_aprsy"]
+[ext_resource type="PackedScene" uid="uid://dbcvu84y5npsf" path="res://scenes/gameplay/element/block/snack.tscn" id="4_837od"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6ayvl"]
+points = PackedVector3Array(-0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 3, -0.5, 0.5, 0, 0.5, 0.5, 3, -0.5, -0.5, 3, 0.5, 0.5, 3, 0.5)
+
+[node name="MossGreekPillar" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
+mass = 200.0
+center_of_mass_mode = 1
+script = ExtResource("1_iinmn")
+mesh = NodePath("MossGreekPillar")
+snack = NodePath("Snack")
+
+[node name="MossGreekPillar" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh = ExtResource("2_ahd4m")
+surface_material_override/0 = ExtResource("3_aprsy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_6ayvl")
+
+[node name="CenterOfMass" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9514, 0)
+
+[node name="Snack" parent="." instance=ExtResource("4_837od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="SnackingParticles" parent="Snack" index="0"]
+color = Color(0.498039, 0.513726, 0.556863, 1)
+
+[editable path="Snack"]

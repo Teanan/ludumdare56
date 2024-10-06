@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://oncyudxmjm8p"]
 
 [ext_resource type="ArrayMesh" uid="uid://cyy02gaigawp7" path="res://assets/models/block/beam.obj" id="1_sw4lk"]
-[ext_resource type="Script" path="res://scenes/gameplay/element/block/beam.gd" id="1_ylxtd"]
+[ext_resource type="Script" path="res://scenes/gameplay/element/block/old/beam.gd" id="1_ylxtd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oamsm"]
 size = Vector3(24, 4, 4)

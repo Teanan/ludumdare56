@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cce0dmsk38etf"]
+
+[ext_resource type="Script" path="res://scenes/gameplay/element/block/generic_block.gd" id="1_c8816"]
+[ext_resource type="ArrayMesh" uid="uid://bnnle6t24skhr" path="res://assets/models/block/models/half_slab.obj" id="2_yqh6a"]
+[ext_resource type="Material" uid="uid://bt53mkpyfrbxu" path="res://assets/models/block/materials/moss_material.tres" id="3_5m1q2"]
+[ext_resource type="PackedScene" uid="uid://dbcvu84y5npsf" path="res://scenes/gameplay/element/block/snack.tscn" id="4_0njym"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gkisf"]
+points = PackedVector3Array(-1.5, 0, -0.5, -1.5, 0.5, -0.5, 1.5, 0, -0.5, -1.5, 0, 1.5, -1.5, 0.5, 1.5, 1.5, 0.5, -0.5, 1.5, 0, 1.5, 1.5, 0.5, 1.5)
+
+[node name="WoodHalfSlab" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
+mass = 40.0
+script = ExtResource("1_c8816")
+mesh = NodePath("WoodHalfSlab")
+snack = NodePath("Snack")
+
+[node name="WoodHalfSlab" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -1.76041)
+mesh = ExtResource("2_yqh6a")
+surface_material_override/0 = ExtResource("3_5m1q2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -1.76041)
+shape = SubResource("ConvexPolygonShape3D_gkisf")
+
+[node name="CenterOfMass" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05559, 0)
+
+[node name="Snack" parent="." instance=ExtResource("4_0njym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+
+[node name="SnackingParticles" parent="Snack" index="0"]
+color = Color(0.403922, 0.592157, 0.172549, 1)
+
+[editable path="Snack"]

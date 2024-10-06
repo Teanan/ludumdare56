@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://co7byw6vkmosv"]
 
-[ext_resource type="Script" path="res://scenes/gameplay/element/block/basic.gd" id="1_gvrw7"]
+[ext_resource type="Script" path="res://scenes/gameplay/element/block/old/basic.gd" id="1_gvrw7"]
 [ext_resource type="ArrayMesh" uid="uid://0jyhudbqt2hp" path="res://assets/models/block/basic.obj" id="1_hsgik"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7lj7d"]

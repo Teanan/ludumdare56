@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ce5dfxa44yrep"]
 
-[ext_resource type="Script" path="res://scenes/gameplay/element/block/center_of_mass.gd" id="1_7561k"]
+[ext_resource type="Script" path="res://scenes/gameplay/element/block/generic_block.gd" id="1_7561k"]
 [ext_resource type="ArrayMesh" uid="uid://bnnle6t24skhr" path="res://assets/models/block/models/half_slab.obj" id="1_qh6xa"]
 [ext_resource type="Material" uid="uid://bt53mkpyfrbxu" path="res://assets/models/block/materials/moss_material.tres" id="2_c6g1p"]
 [ext_resource type="PackedScene" uid="uid://dbcvu84y5npsf" path="res://scenes/gameplay/element/block/snack.tscn" id="4_5gfio"]
@@ -8,13 +8,13 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gkisf"]
 points = PackedVector3Array(-1.5, 0, -0.5, -1.5, 0.5, -0.5, 1.5, 0, -0.5, -1.5, 0, 1.5, -1.5, 0.5, 1.5, 1.5, 0.5, -0.5, 1.5, 0, 1.5, 1.5, 0.5, 1.5)
 
-[node name="HalfSlab" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
+[node name="MossHalfSlab" type="RigidBody3D" node_paths=PackedStringArray("mesh", "snack") groups=["targetable"]]
 mass = 40.0
 script = ExtResource("1_7561k")
-mesh = NodePath("HalfSlab")
+mesh = NodePath("MossHalfSlab")
 snack = NodePath("Snack")
 
-[node name="HalfSlab" type="MeshInstance3D" parent="."]
+[node name="MossHalfSlab" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -1.76041)
 mesh = ExtResource("1_qh6xa")
 surface_material_override/0 = ExtResource("2_c6g1p")

@@ -1,20 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://bteuboje5e2ux"]
+[gd_scene load_steps=17 format=3 uid="uid://bteuboje5e2ux"]
 
-[ext_resource type="PackedScene" uid="uid://c2dngy4sqp5dr" path="res://scenes/gameplay/element/block/GreekPillar.tscn" id="1_7ix81"]
-[ext_resource type="PackedScene" uid="uid://ce5dfxa44yrep" path="res://scenes/gameplay/element/block/HalfSlab.tscn" id="3_jfoxu"]
-[ext_resource type="PackedScene" uid="uid://r0koobcdmodo" path="res://scenes/gameplay/element/block/SmallSlope.tscn" id="3_opia0"]
-[ext_resource type="PackedScene" uid="uid://c2obli0x52fg7" path="res://scenes/gameplay/element/block/Box.tscn" id="4_uj0r2"]
+[ext_resource type="PackedScene" uid="uid://c2dngy4sqp5dr" path="res://scenes/gameplay/element/block/MarbleGreekPillar.tscn" id="1_7ix81"]
+[ext_resource type="PackedScene" uid="uid://bpox6664nop0s" path="res://scenes/gameplay/element/block/BrickBox.tscn" id="1_qhbtq"]
+[ext_resource type="PackedScene" uid="uid://bndyr7rppkjfw" path="res://scenes/gameplay/element/block/BrickGreekPillar.tscn" id="2_uv7e1"]
+[ext_resource type="PackedScene" uid="uid://ct46dbsklhmmf" path="res://scenes/gameplay/element/block/BrickHalfSlab.tscn" id="3_g0i4n"]
+[ext_resource type="PackedScene" uid="uid://ce5dfxa44yrep" path="res://scenes/gameplay/element/block/MossHalfSlab.tscn" id="3_jfoxu"]
+[ext_resource type="PackedScene" uid="uid://r0koobcdmodo" path="res://scenes/gameplay/element/block/BrickSlope.tscn" id="3_opia0"]
+[ext_resource type="PackedScene" uid="uid://c2obli0x52fg7" path="res://scenes/gameplay/element/block/WoodBox.tscn" id="4_uj0r2"]
+[ext_resource type="PackedScene" uid="uid://hiuk0jhiqye6" path="res://scenes/gameplay/element/block/MarbleBox.tscn" id="5_jfalr"]
+[ext_resource type="PackedScene" uid="uid://cr1h657j5fwue" path="res://scenes/gameplay/element/block/MarbleHalfSlab.tscn" id="7_cvk1y"]
+[ext_resource type="PackedScene" uid="uid://caiuxs1qmb48h" path="res://scenes/gameplay/element/block/MarbleSlope.tscn" id="8_sfa6i"]
+[ext_resource type="PackedScene" uid="uid://mth5jkwldbn2" path="res://scenes/gameplay/element/block/MossBox.tscn" id="9_o65u2"]
+[ext_resource type="PackedScene" uid="uid://dv1anlpbcm7bt" path="res://scenes/gameplay/element/block/MossGreekPillar.tscn" id="10_jgdjt"]
+[ext_resource type="PackedScene" uid="uid://3h2ut2wue1nu" path="res://scenes/gameplay/element/block/MossSlope.tscn" id="12_83xfj"]
+[ext_resource type="PackedScene" uid="uid://bhw5xhvbsjeef" path="res://scenes/gameplay/element/block/WoodGreekPillar.tscn" id="14_c8q5e"]
+[ext_resource type="PackedScene" uid="uid://cce0dmsk38etf" path="res://scenes/gameplay/element/block/WoodHalfSlab.tscn" id="15_6qafx"]
+[ext_resource type="PackedScene" uid="uid://dltrl5v43wg1" path="res://scenes/gameplay/element/block/WoodSlope.tscn" id="16_4ce6k"]
 
 [node name="AllBlocksForMeshlibrary" type="Node3D"]
 
-[node name="0_GreekPillar" parent="." instance=ExtResource("1_7ix81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.468139, 0, 2.30455)
+[node name="0_BrickBox" parent="." instance=ExtResource("1_qhbtq")]
 
-[node name="1_SmallSlope" parent="." instance=ExtResource("3_opia0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03771, 0, 1.83357)
+[node name="1_BrickGreekPillar" parent="." instance=ExtResource("2_uv7e1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
-[node name="2_HalfSlab" parent="." instance=ExtResource("3_jfoxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.6176, -0.736861, 1.54158)
+[node name="2_BrickHalfSlab" parent="." instance=ExtResource("3_g0i4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
-[node name="3_Box" parent="." instance=ExtResource("4_uj0r2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.9558, 0, 2.07491)
+[node name="3_BrickSlope" parent="." instance=ExtResource("3_opia0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="4_MarbleBox" parent="." instance=ExtResource("5_jfalr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="5_MarbleGreekPillar" parent="." instance=ExtResource("1_7ix81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="6_MarbleHalfSlab" parent="." instance=ExtResource("7_cvk1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
+
+[node name="7_MarbleSlope" parent="." instance=ExtResource("8_sfa6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+
+[node name="8_MossBox" parent="." instance=ExtResource("9_o65u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="9_MossGreekPillar" parent="." instance=ExtResource("10_jgdjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+
+[node name="10_MossHalfSlab" parent="." instance=ExtResource("3_jfoxu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
+
+[node name="11_MossSlope" parent="." instance=ExtResource("12_83xfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+
+[node name="12_WoodBox" parent="." instance=ExtResource("4_uj0r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="13_WoodGreekPillar" parent="." instance=ExtResource("14_c8q5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 30)
+
+[node name="14_WoodHalfSlab" parent="." instance=ExtResource("15_6qafx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
+
+[node name="15_WoodSlope" parent="." instance=ExtResource("16_4ce6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)

@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	$DeathParticles.visible = true
+	$DeathParticles.emitting = true
 
 	var free_timer = Timer.new()
 	free_timer.set_wait_time(2) # 5 seconds wait time

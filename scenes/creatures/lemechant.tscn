@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://c4ryeje27x7r5"]
 
-[ext_resource type="Script" path="res://scenes/creatures/lemechant.gd" id="1_in0j1"]
+[ext_resource type="Script" path="res://scenes/creatures/main_character.gd" id="1_in0j1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u2wul"]
 load_path = "res://.godot/imported/single.png-78a6c0dbeb3f09e3d683d516abe152f3.s3tc.ctex"
@@ -90,6 +90,7 @@ rings = 16
 
 [node name="LeMechant" type="RigidBody3D"]
 script = ExtResource("1_in0j1")
+type = 1
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.999996, 0.00250423, 0.000986808, 0.00250352, 0.999997, -0.00040546, -0.00131709, -0.000537317, -0.749999, 0, 0, 0)

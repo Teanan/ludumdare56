@@ -27,6 +27,10 @@ func pause_hide():
 		if n:
 			n.show()
 
+	label.modulate = Color(1, 1, 1, 1)
+	var tween = create_tween()
+	tween.tween_property(label, "modulate:a", 0, 5.0)
+
 	for n in nodes_grp2:
 		if n:
 			n.hide()

@@ -28,20 +28,23 @@ func result_hide() -> void:
 
 
 func _on_next_pressed() -> void:
+	print("next level")
 	var params = {
 		"show_progress_bar": true,
 		"level_name": "Level" + str(current_level + 1)
 	}
-	Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)
+	#Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)
 
 
 func _on_retry_pressed() -> void:
+	print("retry level")
 	var params = {
 		"show_progress_bar": true,
 		"level_name": "Level" + str(current_level)
 	}
-	Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)
+	#Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)
 
 
 func _on_main_menu_pressed() -> void:
-	Game.change_scene_to_file("res://scenes/menu/menu.tscn", {"show_progress_bar": false})
+	print("back 2 menu")
+	#Game.change_scene_to_file("res://scenes/menu/menu.tscn", {"show_progress_bar": false})

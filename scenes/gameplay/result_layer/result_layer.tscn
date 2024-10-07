@@ -43,20 +43,16 @@ theme_override_constants/separation = 20
 
 [node name="Next" type="LinkButton" parent="MarginContainer/Control/VBoxOptions"]
 layout_mode = 2
-focus_mode = 2
-mouse_filter = 1
 text = "NEXT LEVEL"
 
 [node name="Retry" type="LinkButton" parent="MarginContainer/Control/VBoxOptions"]
 layout_mode = 2
-focus_mode = 2
-mouse_filter = 1
+focus_mode = 1
 text = "<RETRY or DONT GIVE UP>"
 
 [node name="MainMenu" type="LinkButton" parent="MarginContainer/Control/VBoxOptions"]
 layout_mode = 2
-focus_mode = 2
-mouse_filter = 1
+focus_mode = 1
 text = "MAIN MENU"
 
 [node name="Result" type="Label" parent="MarginContainer/Control"]

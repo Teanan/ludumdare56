@@ -27,6 +27,6 @@ func add_Level_Button(i):
 func _on_Level_Button_pressed(i):
 	var params = {
 		"show_progress_bar": true,
-		"level_name": "Level" + str(i)
+		"level_int": i
 	}
 	Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)

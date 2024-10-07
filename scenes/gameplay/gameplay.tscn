@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://4fyoq8npekf0"]
+[gd_scene load_steps=13 format=3 uid="uid://4fyoq8npekf0"]
 
-[ext_resource type="PackedScene" uid="uid://barl4q1kugrmm" path="res://scenes/gameplay/pause-layer/pause-layer.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://barl4q1kugrmm" path="res://scenes/gameplay/pause-layer/pause_layer.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cp3ojvq5wa35u" path="res://scenes/gameplay/shop.tscn" id="2_ra0l6"]
 [ext_resource type="PackedScene" uid="uid://cda4kuh8b7mik" path="res://scenes/gameplay/rotating_camera.tscn" id="3_hxalf"]
+[ext_resource type="PackedScene" uid="uid://dm8jrb5keueh1" path="res://scenes/gameplay/result_layer/result_layer.tscn" id="4_bjq13"]
 [ext_resource type="Script" path="res://scenes/gameplay/gameplay.gd" id="5"]
 [ext_resource type="Material" uid="uid://bo7svsw4wjc0k" path="res://assets/models/block/materials/grass_material.tres" id="5_3i8fw"]
 
@@ -34,6 +35,8 @@ script = ExtResource("5")
 [node name="ShopLayer" parent="." instance=ExtResource("2_ra0l6")]
 
 [node name="PauseLayer" parent="." instance=ExtResource("2")]
+
+[node name="ResultLayer" parent="." instance=ExtResource("4_bjq13")]
 
 [node name="RotatingCamera" parent="." instance=ExtResource("3_hxalf")]
 

@@ -21,7 +21,8 @@ func pre_start(params):
 			var val = params[key]
 			printt("", key, val)
 
-	var level = load("res://scenes/levels/" + params["level_name"] + ".tscn")
+	var level = load("res://scenes/levels/Level" + str(params["level_int"]) + ".tscn")
+	$ResultLayer.current_level = params["level_int"]
 	var level_i: Node3D = level.instantiate()
 	add_child.call_deferred(level_i)
 	level_i.connect("tree_entered", _on_level_grid_loaded.bind(level_i))
@@ -164,8 +165,10 @@ func _on_shop_layer_creature_selected(type: CreatureEnum.CreatureType) -> void:
 func _on_gentil_death() -> void:
 	print("gentil is dead")
 	wakeup()
+	$ResultLayer.defeat_show()
 
 
 func _on_mechant_death() -> void:
 	print("mechant is dead")
 	wakeup()
+	$ResultLayer.victory_show()

@@ -23,7 +23,7 @@ func defeat_show() -> void:
 func result_show() -> void:
 	$ColorRect.visible = true
 	$MarginContainer.visible = true
-	$MarginContainer/Control/VBoxOptions.grab_focus()
+	$MarginContainer/Control/VBoxOptions.set_focus_mode(Control.FOCUS_ALL)
 	if current_level >= 5:
 		$MarginContainer/Control/VBoxOptions/Next.visible = false
 

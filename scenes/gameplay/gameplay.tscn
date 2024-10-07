@@ -34,9 +34,9 @@ script = ExtResource("5")
 
 [node name="ShopLayer" parent="." instance=ExtResource("2_ra0l6")]
 
-[node name="PauseLayer" parent="." instance=ExtResource("2")]
-
 [node name="ResultLayer" parent="." instance=ExtResource("4_bjq13")]
+
+[node name="PauseLayer" parent="." instance=ExtResource("2")]
 
 [node name="RotatingCamera" parent="." instance=ExtResource("3_hxalf")]
 

@@ -2,7 +2,7 @@ extends Control
 
 @export var level_button: PackedScene;
 
-const MAX_LEVEL = 8
+const MAX_LEVEL = 5
 
 # Set to true to avoid clicking on play every time
 const AUTOPLAY = false

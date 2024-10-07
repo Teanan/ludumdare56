@@ -165,10 +165,12 @@ func _on_shop_layer_creature_selected(type: CreatureEnum.CreatureType) -> void:
 func _on_gentil_death() -> void:
 	print("gentil is dead")
 	wakeup()
+	$ShopLayer.visible = false
 	$ResultLayer.defeat_show()
 
 
 func _on_mechant_death() -> void:
 	print("mechant is dead")
 	wakeup()
+	$ShopLayer.visible = false
 	$ResultLayer.victory_show()
